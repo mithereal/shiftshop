@@ -30,6 +30,12 @@ defmodule ApiWeb do
     end
   end
 
+  def user_auth do
+    quote do
+      import ApiWeb.UserAuth
+    end
+  end
+
   def channel do
     quote do
       use Phoenix.Channel
