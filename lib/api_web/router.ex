@@ -41,6 +41,12 @@ defmodule ApiWeb.Router do
     post "/:provider/callback", AuthController, :callback
   end
 
+  scope "/settings", ApiWeb do
+    pipe_through [:browser_with_no_csrf]
+
+    get "/:provider/settings", AuthController, :callback
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", ApiWeb do
   #   pipe_through :api
