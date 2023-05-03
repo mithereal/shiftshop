@@ -54,7 +54,7 @@ defmodule Api.MixProject do
       {:ueberauth_shift4shop, git: "https://github.com/mithereal/ueberauth_shift4shop.git"},
       {:shift4shop, git: "https://github.com/mithereal/ex_shift4shop.git"},
       {:ueberauth, "~> 0.7.0"},
-      {:dictionary, "~> 0.1.0"},
+      {:dictionary, "~> 0.1.0"}
     ]
   end
 

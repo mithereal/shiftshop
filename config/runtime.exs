@@ -51,7 +51,6 @@ if config_env() == :prod do
   host = System.get_env("PHX_HOST") || "localhost"
   port = String.to_integer(System.get_env("PORT") || "4000")
 
-
   app_name = System.get_env("FLY_APP_NAME") || nil
 
   app_url =

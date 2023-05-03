@@ -61,6 +61,7 @@ defmodule ApiWeb do
         layout: {ApiWeb.Layouts, :app}
 
       unquote(html_helpers())
+      unquote(authentication_helpers())
     end
   end
 
@@ -82,6 +83,24 @@ defmodule ApiWeb do
 
       # Include general helpers for rendering HTML
       unquote(html_helpers())
+    end
+  end
+
+  defp authentication_helpers do
+    quote do
+      import Phoenix.Component
+      alias Api.Users.User
+
+      @impl true
+      def handle_info(%{event: "logout_user", payload: %{user: %User{id: id}}}, socket) do
+        with %User{id: ^id} <- socket.assigns.current_user do
+          {:noreply,
+           socket
+           |> redirect(to: url(~p"/session/force_logout"))}
+        else
+          _any -> {:noreply, socket}
+        end
+      end
     end
   end
 

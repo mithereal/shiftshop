@@ -28,12 +28,31 @@ defmodule ApiWeb.UserAuth do
   def log_in_user(conn, user, params \\ %{}) do
     token = Users.generate_user_session_token(user)
     user_return_to = get_session(conn, :user_return_to)
+    current_user = user_session(user)
 
     conn
     |> renew_session()
     |> put_token_in_session(token)
+    |> put_session(:current_user, current_user)
     |> maybe_write_remember_me_cookie(token, params)
     |> redirect(to: user_return_to || signed_in_path(conn))
+  end
+
+  def last_login(user) do
+    data = %{user | last_login: DateTime.utc_now()}
+    Users.update_user(data)
+  end
+
+  defp user_session(user) do
+    Map.drop(user, [
+      :confirmed_at,
+      :inserted_at,
+      :active,
+      :uid,
+      :account_id,
+      :last_login,
+      :account
+    ])
   end
 
   defp maybe_write_remember_me_cookie(conn, token, %{"remember_me" => "true"}) do

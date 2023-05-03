@@ -80,5 +80,5 @@ config :phoenix, :plug_init_mode, :runtime
 config :swoosh, :api_client, false
 
 config :ueberauth, Ueberauth.Strategy.Shift4Shop.OAuth,
-       client_id: System.get_env("SHIFT4SHOP_CLIENT_ID"),
-       client_secret:  System.get_env("SHIFT4SHOP_CLIENT_SECRET")
+  client_id: System.get_env("SHIFT4SHOP_CLIENT_ID"),
+  client_secret: System.get_env("SHIFT4SHOP_CLIENT_SECRET")

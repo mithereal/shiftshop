@@ -29,6 +29,7 @@ defmodule ApiWeb.AuthController do
     conn
     |> redirect(to: "/")
   end
+
   def callback(%{assigns: %{ueberauth_failure: error}} = conn, _params) do
     error = List.first(error.errors)
 

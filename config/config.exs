@@ -57,9 +57,9 @@ config :logger, :console,
   metadata: [:request_id]
 
 config :ueberauth, Ueberauth,
-       providers: [
-         shift4shop: { Ueberauth.Strategy.Shift4Shop, [] }
-       ]
+  providers: [
+    shift4shop: {Ueberauth.Strategy.Shift4Shop, []}
+  ]
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
