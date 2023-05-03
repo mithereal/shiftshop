@@ -23,7 +23,7 @@ defmodule ApiWeb.Router do
     plug(:fetch_session)
     plug(:fetch_live_flash)
     plug(:put_root_layout, {ApiWeb.LayoutView, :root})
-  #  plug(:fetch_current_user)
+    plug(:fetch_current_user)
   end
 
   scope "/", ApiWeb do
