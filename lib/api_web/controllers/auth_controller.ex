@@ -23,6 +23,12 @@ defmodule ApiWeb.AuthController do
     |> UserAuth.log_out_user()
   end
 
+  def callback(conn, params) do
+    IO.inspect(params)
+
+    conn
+    |> redirect(to: "/")
+  end
   def callback(%{assigns: %{ueberauth_failure: error}} = conn, _params) do
     error = List.first(error.errors)
 
