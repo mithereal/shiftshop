@@ -35,3 +35,10 @@ api-*.tar
 npm-debug.log
 /assets/node_modules/
 
+/.dockerignore
+/api.iml
+/fly.toml
+/rel/overlays/bin/migrate
+/rel/overlays/bin/migrate.bat
+/rel/overlays/bin/server
+/rel/overlays/bin/server.bat
