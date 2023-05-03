@@ -32,9 +32,9 @@ config :api, ApiWeb.Endpoint,
          hsts: false
        ]
 
-config :ueberauth, Ueberauth.Strategy.Swift4Shop.OAuth,
-       client_id: System.get_env("SWIFT4SHOP_CLIENT_ID"),
-       client_secret:  System.get_env("SWIFT4SHOP_CLIENT_SECRET")
+config :ueberauth, Ueberauth.Strategy.Shift4Shop.OAuth,
+       client_id: System.get_env("SHIFT4SHOP_CLIENT_ID"),
+       client_secret:  System.get_env("SHIFT4SHOP_CLIENT_SECRET")
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
