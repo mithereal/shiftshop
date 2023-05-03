@@ -42,7 +42,7 @@ defmodule ApiWeb.Router do
   end
 
   scope "/settings", ApiWeb do
-    pipe_through [:browser_with_no_csrf]
+    pipe_through [:browser]
 
     get "/:provider", ProviderSettingsController, :edit
   end
