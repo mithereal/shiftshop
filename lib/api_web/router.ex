@@ -1,5 +1,6 @@
 defmodule ApiWeb.Router do
   use ApiWeb, :router
+  use Web, :user_auth
 
   pipeline :browser do
     plug :accepts, ["html"]
