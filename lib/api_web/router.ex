@@ -14,10 +14,28 @@ defmodule ApiWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug Ueberauth
+  end
+
+  pipeline :browser_with_no_csrf do
+    plug(:fetch_session)
+    plug(:fetch_live_flash)
+    plug(:put_root_layout, {ApiWeb.LayoutView, :root})
+  #  plug(:fetch_current_user)
+  end
+
   scope "/", ApiWeb do
     pipe_through :browser
 
     get "/", PageController, :home
+  end
+
+  scope "/auth", ApiWeb do
+    pipe_through [:browser_with_no_csrf, :redirect_if_user_is_authenticated]
+
+    get "/:provider", AuthController, :request
+    get "/:provider/callback", AuthController, :callback
   end
 
   # Other scopes may use custom stacks.

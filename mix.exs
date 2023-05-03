@@ -32,6 +32,7 @@ defmodule Api.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:bcrypt_elixir, "~> 3.0"},
       {:phoenix, "~> 1.7.1"},
       {:phoenix_ecto, "~> 4.4"},
       {:ecto_sql, "~> 3.6"},
@@ -53,6 +54,7 @@ defmodule Api.MixProject do
       {:ueberauth_shift4shop, git: "https://github.com/mithereal/ueberauth_shift4shop.git"},
       {:swift4shop, git: "https://github.com/mithereal/ex_swift4shop.git"},
       {:ueberauth, "~> 0.7.0"},
+      {:dictionary, "~> 0.1.0"},
     ]
   end
 
