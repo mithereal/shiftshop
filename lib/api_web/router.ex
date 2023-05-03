@@ -44,7 +44,7 @@ defmodule ApiWeb.Router do
   scope "/settings", ApiWeb do
     pipe_through [:browser_with_no_csrf]
 
-    get "/:provider/settings", ProviderSettingsController, :edit
+    get "/:provider", ProviderSettingsController, :edit
   end
 
   # Other scopes may use custom stacks.
