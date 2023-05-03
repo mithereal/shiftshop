@@ -17,5 +17,24 @@ config :swoosh, api_client: Swoosh.ApiClient.Finch, finch_name: Api.Finch
 # Do not print debug messages in production
 config :logger, level: :info
 
+hostname = System.get_env("PHOENIX_HOSTNAME") || "localhost"
+
+config :api, ApiWeb.Endpoint,
+       url: [host: hostname, port: 80],
+       check_origin: false,
+       force_ssl: [rewrite_on: [:x_forwarded_proto]],
+       cache_static_manifest: "priv/static/cache_manifest.json",
+       socket_options: [:inet6],
+       force_ssl: [
+         host: nil,
+         rewrite_on: [:x_forwarded_port, :x_forwarded_proto],
+         # maybe true when we use this for real
+         hsts: false
+       ]
+
+config :ueberauth, Ueberauth.Strategy.Swift4Shop.OAuth,
+       client_id: System.get_env("SWIFT4SHOP_CLIENT_ID"),
+       client_secret:  System.get_env("SWIFT4SHOP_CLIENT_SECRET")
+
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.

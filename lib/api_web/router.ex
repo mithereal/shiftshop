@@ -14,6 +14,10 @@ defmodule ApiWeb.Router do
     plug :accepts, ["json"]
   end
 
+  pipeline :auth do
+    plug Ueberauth
+  end
+
   scope "/", ApiWeb do
     pipe_through :browser
 

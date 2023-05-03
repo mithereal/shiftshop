@@ -78,3 +78,7 @@ config :phoenix, :plug_init_mode, :runtime
 
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
+
+config :ueberauth, Ueberauth.Strategy.Swift4Shop.OAuth,
+       client_id: System.get_env("SWIFT4SHOP_CLIENT_ID"),
+       client_secret:  System.get_env("SWIFT4SHOP_CLIENT_SECRET")

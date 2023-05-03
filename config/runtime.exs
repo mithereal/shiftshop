@@ -48,11 +48,20 @@ if config_env() == :prod do
       You can generate one by calling: mix phx.gen.secret
       """
 
-  host = System.get_env("PHX_HOST") || "example.com"
+  host = System.get_env("PHX_HOST") || "localhost"
   port = String.to_integer(System.get_env("PORT") || "4000")
 
+
+  app_name = System.get_env("FLY_APP_NAME") || nil
+
+  app_url =
+    case is_nil(app_name) do
+      true -> host
+      false -> "#{app_name}.fly.dev"
+    end
+
   config :api, ApiWeb.Endpoint,
-    url: [host: host, port: 443, scheme: "https"],
+    url: [host: app_url, port: 443, scheme: "https"],
     http: [
       # Enable IPv6 and bind on all interfaces.
       # Set it to  {0, 0, 0, 0, 0, 0, 0, 1} for local network only access.
