@@ -21,6 +21,7 @@ defmodule ApiWeb.Router do
   end
 
   pipeline :browser_with_no_csrf do
+    plug :accepts, ["html"]
     plug(:fetch_session)
     plug(:fetch_live_flash)
     plug(:put_root_layout, {ApiWeb.LayoutView, :root})
@@ -42,7 +43,7 @@ defmodule ApiWeb.Router do
   end
 
   scope "/settings", ApiWeb do
-    pipe_through [:browser]
+    pipe_through [:browser,:browser_with_no_csrf]
 
     get "/:provider", ProviderSettingsController, :edit
   end
