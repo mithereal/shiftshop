@@ -57,8 +57,6 @@ defmodule Api.MixProject do
       {:dictionary, "~> 0.1.0"},
       {:plug_content_security_policy,
         git: "https://github.com/data-twister/plug_content_security_policy.git"},
-      {:proofx,
-        git: "https://github.com/mithereal/proofx.git"},
       {:corsica, "~> 1.1"},
     ]
   end
