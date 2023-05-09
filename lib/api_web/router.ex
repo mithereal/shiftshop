@@ -26,6 +26,7 @@ defmodule ApiWeb.Router do
     plug(:fetch_live_flash)
     plug(:put_root_layout, {ApiWeb.Layouts, :root})
     plug(:fetch_current_user)
+    plug(ApiWeb.AllowCrossOriginIframe)
   end
 
   scope "/", ApiWeb do
