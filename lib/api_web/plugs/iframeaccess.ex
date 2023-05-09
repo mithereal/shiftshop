@@ -10,6 +10,6 @@ defmodule ApiWeb.AllowCrossOriginIframe do
   end
 
   defp authenticate_source(conn) do
-    # check that source is allowed to delete header
+    conn
   end
 end
