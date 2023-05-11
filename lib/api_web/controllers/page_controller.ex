@@ -1,9 +1,9 @@
 defmodule ApiWeb.PageController do
   use ApiWeb, :controller
 
-  def home(conn, _params) do
+  def landing(conn, _params) do
     # The home page is often custom made,
     # so skip the default app layout.
-    render(conn, :home, layout: false)
+    render(conn, :landing, layout: false)
   end
 end

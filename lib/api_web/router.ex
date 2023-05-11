@@ -32,7 +32,30 @@ defmodule ApiWeb.Router do
   scope "/", ApiWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    get "/", PageController, :landing
+
+    live "/customer", CustomerLive.Index, :index
+    live "/customer/new", CustomerLive.Index, :new
+    live "/customer/:id/edit", CustomerLive.Index, :edit
+
+    live "/customer/:id", CustomerLive.Show, :show
+    live "/customer/:id/show/edit", CustomerLive.Show, :edit
+
+
+    live "/products", ProductLive.Index, :index
+    live "/products/new", ProductLive.Index, :new
+    live "/products/:id/edit", ProductLive.Index, :edit
+
+    live "/products/:id", ProductLive.Show, :show
+    live "/products/:id/show/edit", ProductLive.Show, :edit
+
+    live "/orders", OrderLive.Index, :index
+    live "/orders/new", OrderLive.Index, :new
+    live "/orders/:id/edit", OrderLive.Index, :edit
+
+    live "/orders/:id", OrderLive.Show, :show
+    live "/orders/:id/show/edit", OrderLive.Show, :edit
+
   end
 
   scope "/auth", ApiWeb do
