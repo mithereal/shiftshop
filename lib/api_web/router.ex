@@ -119,6 +119,7 @@ defmodule ApiWeb.Router do
   scope "/users/settings", ApiWeb do
     pipe_through([:browser, :require_authenticated_user])
 
+    get("/", UserSettingsController, :edit)
     get("/confirm_email/:token", UserConfirmationController, :confirm)
   end
 
