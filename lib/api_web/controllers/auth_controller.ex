@@ -13,7 +13,8 @@ defmodule ApiWeb.AuthController do
 
   require Logger
 
-  def request(conn, _params) do
+  def request(conn, params) do
+    IO.inspect(params, label: "request")
     render(conn, :request, layout: false)
   end
 
@@ -27,7 +28,7 @@ defmodule ApiWeb.AuthController do
     IO.inspect(params)
 
     conn
-    |> redirect(to: ~p"/users/log_in")
+    |> redirect(to: "/users/log_in")
   end
 
   def callback(%{assigns: %{ueberauth_failure: error}} = conn, _params) do
@@ -35,7 +36,7 @@ defmodule ApiWeb.AuthController do
 
     conn
     |> put_flash(:error, "Failed to authenticate. #{error.message}")
-    |> redirect(to: ~p"/users/log_in")
+    |> redirect(to: "/users/log_in")
   end
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
@@ -49,7 +50,7 @@ defmodule ApiWeb.AuthController do
       {:error, reason} ->
         conn
         |> put_flash(:error, reason)
-        |> redirect(to: ~p"/users/log_in")
+        |> redirect(to: "/users/log_in")
     end
   end
 end
