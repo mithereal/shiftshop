@@ -116,6 +116,18 @@ defmodule ApiWeb.Router do
     get("/confirm/:token", UserConfirmationController, :confirm)
   end
 
+  scope "/users/settings", ApiWeb do
+    pipe_through([:browser, :require_authenticated_user])
+
+    get("/confirm_email/:token", UserConfirmationController, :confirm)
+  end
+
+  scope "/session", ApiWeb do
+    pipe_through([:browser])
+
+    get("/force_logout", UserSessionController, :force_logout)
+  end
+
   # Other scopes may use custom stacks.
   # scope "/api", ApiWeb do
   #   pipe_through :api
