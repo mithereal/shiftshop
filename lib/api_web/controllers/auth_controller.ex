@@ -14,7 +14,7 @@ defmodule ApiWeb.AuthController do
   require Logger
 
   def request(conn, _params) do
-    render(conn, :request, callback_url: Helpers.callback_url(conn), layout: false)
+    render(conn, :request, layout: false)
   end
 
   def delete(conn, _params) do
