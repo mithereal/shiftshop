@@ -14,7 +14,6 @@ defmodule ApiWeb.AuthController do
   require Logger
 
   def request(conn, _params) do
-    IO.inspect(conn, label: "conn")
     render(conn, :request, callback_url: Helpers.callback_url(conn), layout: false)
   end
 
@@ -22,15 +21,6 @@ defmodule ApiWeb.AuthController do
     conn
     |> put_flash(:info, "You have been logged out!")
     |> UserAuth.log_out_user()
-  end
-
-
-  def callback(conn, params) do
-    IO.inspect(conn, label: "callback conn")
-    IO.inspect(params, label: "callback params")
-
-    conn
-    |> redirect(to: "/users/log_in")
   end
 
   def callback(%{assigns: %{ueberauth_failure: error}} = conn, _params) do
