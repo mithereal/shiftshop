@@ -693,13 +693,27 @@ defmodule ApiWeb.CoreComponents do
   attr :current_path, :string, required: true
   attr :current_user, :list, required: true
   slot :inner_block, required: true
-  def sidebar_with_path(assigns)  do
+  def user_sidebar(assigns)  do
     ~H"""
-    <aside>
-    <div>{@current_user}</div>
-    <div>{@current_path}</div>
-    <%= render_slot(@inner_block) %>
+    <div class="menu_button" >
+
+    <div class="black_overlay"></div>
+
+    <aside class="main_menu">
+
+        <div class="logo">
+            <h1 class="logo_text">
+               <div>{@current_user}</div>
+               <div>{@current_path}</div>
+            </h1>
+        </div>
+
+        <nav class="navigation">
+        <%= render_slot(@inner_block) %>
+        </nav>
     </aside>
+
+    </div>
     """
   end
 end
