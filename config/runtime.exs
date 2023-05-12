@@ -71,6 +71,25 @@ if config_env() == :prod do
     ],
     secret_key_base: secret_key_base
 
+
+  if config_env() == :prod do
+
+    shift4shop_client_id =
+      System.get_env("SHIFT4SHOP_CLIENT_ID") ||
+        raise """
+        environment variable SHIFT4SHOP_CLIENT_ID is missing.
+        """
+
+    shift4shop_client_secret =
+      System.get_env("SHIFT4SHOP_CLIENT_SECRET") ||
+        raise """
+        environment variable SHIFT4SHOP_CLIENT_SECRET is missing.
+        """
+
+  config :ueberauth, Ueberauth.Strategy.Shift4Shop.OAuth,
+         client_id: shift4shop_client_id,
+         client_secret: shift4shop_client_secret
+  end
   # ## SSL Support
   #
   # To get SSL working, you will need to add the `https` key
