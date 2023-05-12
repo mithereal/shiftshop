@@ -27,6 +27,22 @@ defmodule Api.Users do
   end
 
   @doc """
+  Gets a user by email.
+
+  ## Examples
+
+      iex> get_user_by_uidl("Fdfdfdfdf")
+      %User{}
+
+      iex> get_user_by_uid("fdfdfdf")
+      nil
+
+  """
+  def get_user_by_uid(uid) when is_binary(uid) do
+    Repo.get_by(User, shift4shop_uid: uid)
+  end
+
+  @doc """
   Gets a user by email and password.
 
   ## Examples
@@ -369,7 +385,7 @@ defmodule Api.Users do
     password = Dictionary.random_word() <> "_" <> Dictionary.random_word()
 
     user_to_register = %{
-      email: auth.info.email,
+      email: "",
       terms: "on",
       confirmed_at: DateTime.utc_now(),
       password: password,
@@ -377,7 +393,7 @@ defmodule Api.Users do
       shift4shop_uid: auth.uid
     }
 
-    case get_user_by_email(auth.info.email) do
+    case get_user_by_uid(auth.uid) do
       nil ->
         register_user(user_to_register)
 
@@ -390,10 +406,10 @@ defmodule Api.Users do
   end
 
   def find_or_create(auth) do
-    case get_user_by_email(auth.email) do
+    case get_user_by_uid(auth.uid) do
       nil ->
         user = register_user(auth)
-        User.update_user(user, %{github_uid: auth.uid})
+        User.update_user(user, %{shift4shop_uid: auth.uid})
 
       reply ->
         reply
