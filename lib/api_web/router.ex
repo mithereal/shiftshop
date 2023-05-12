@@ -54,6 +54,7 @@ defmodule ApiWeb.Router do
         {ApiWeb.UserAuth, :ensure_authenticated},
         {ApiWeb.Path, :put_path_in_socket}
       ] do
+      live "/home", CustomerLive.Index, :index
       live "/customers", CustomerLive.Index, :index
       live "/customers/new", CustomerLive.Index, :new
       live "/customers/:id/edit", CustomerLive.Index, :edit

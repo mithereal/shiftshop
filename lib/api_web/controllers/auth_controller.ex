@@ -13,9 +13,8 @@ defmodule ApiWeb.AuthController do
 
   require Logger
 
-  def request(conn, params) do
-    IO.inspect(params, label: "request")
-    render(conn, :request, layout: false)
+  def request(conn, _params) do
+    render(conn, :request, callback_url: Helpers.callback_url(conn), layout: false)
   end
 
   def delete(conn, _params) do
@@ -24,19 +23,12 @@ defmodule ApiWeb.AuthController do
     |> UserAuth.log_out_user()
   end
 
-  def callback(conn, params) do
-    IO.inspect(params)
-
-    conn
-    |> redirect(to: "/users/log_in")
-  end
-
   def callback(%{assigns: %{ueberauth_failure: error}} = conn, _params) do
     error = List.first(error.errors)
 
     conn
     |> put_flash(:error, "Failed to authenticate. #{error.message}")
-    |> redirect(to: "/users/log_in")
+    |> redirect(to: "/")
   end
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
@@ -50,7 +42,7 @@ defmodule ApiWeb.AuthController do
       {:error, reason} ->
         conn
         |> put_flash(:error, reason)
-        |> redirect(to: "/users/log_in")
+        |> redirect(to: "/home")
     end
   end
 end
