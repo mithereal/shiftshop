@@ -41,7 +41,13 @@ defmodule Api.Users.User do
   def registration_changeset(user, attrs, opts \\ []) do
     user
     |> cast(attrs, [:email, :password, :shift4shop_uid])
+    |> validate_email(opts)
     |> validate_password(opts)
+  end
+
+  def oauth_registration_changeset(user, attrs, opts \\ []) do
+    user
+    |> cast(attrs, [:email, :password, :shift4shop_uid])
   end
 
   defp validate_email(changeset, opts) do

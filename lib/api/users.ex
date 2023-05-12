@@ -97,6 +97,24 @@ defmodule Api.Users do
   end
 
   @doc """
+  Registers a user.
+
+  ## Examples
+
+      iex> register_user(%{field: value})
+      {:ok, %User{}}
+
+      iex> register_user(%{field: bad_value})
+      {:error, %Ecto.Changeset{}}
+
+  """
+  def oauth_register_user(attrs) do
+    %User{}
+    |> User.oauth_registration_changeset(attrs)
+    |> Repo.insert()
+  end
+
+  @doc """
   Returns an `%Ecto.Changeset{}` for tracking user changes.
 
   ## Examples
@@ -395,10 +413,10 @@ defmodule Api.Users do
 
     case get_user_by_uid(auth.uid) do
       nil ->
-        register_user(user_to_register)
+        oauth_register_user(user_to_register)
 
       {:ok, nil} ->
-        register_user(user_to_register)
+        oauth_register_user(user_to_register)
 
       data ->
         data
