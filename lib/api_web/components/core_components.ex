@@ -692,9 +692,10 @@ defmodule ApiWeb.CoreComponents do
   """
   attr :current_path, :string, required: true
   attr :current_user, :string, required: true
-  slot :inner_block, required: true
+  slot :inner_block, required: false
   def user_sidebar(assigns)  do
     ~H"""
+    <div class="flex items-center gap-4">
     <div class="menu_button" >
 
     <div class="black_overlay"></div>
@@ -713,6 +714,7 @@ defmodule ApiWeb.CoreComponents do
         </nav>
     </aside>
 
+    </div>
     </div>
     """
   end

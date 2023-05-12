@@ -49,6 +49,7 @@ defmodule ApiWeb.Router do
     pipe_through :user
 
     live_session :require_authenticated_user,
+    layout: {ApiWeb.Layouts, :user},
       on_mount: [
         {ApiWeb.UserAuth, :ensure_authenticated},
         {ApiWeb.Path, :put_path_in_socket}
@@ -88,6 +89,31 @@ defmodule ApiWeb.Router do
     pipe_through [:browser, :browser_with_no_csrf]
 
     get "/:provider", ProviderSettingsController, :edit
+  end
+
+
+  scope "/users", ApiWeb do
+    pipe_through([:browser, :redirect_if_user_is_authenticated])
+
+    get("/register", UserRegistrationController, :new)
+    post("/register", UserRegistrationController, :create)
+    get("/log_in", UserSessionController, :new)
+    post("/log_in", UserSessionController, :create)
+    get("/reset_password", UserResetPasswordController, :new)
+    post("/reset_password", UserResetPasswordController, :create)
+    get("/reset_password/:token", UserResetPasswordController, :edit)
+    put("/reset_password/:token", UserResetPasswordController, :update)
+  end
+
+  scope "/users", ApiWeb do
+    pipe_through([:browser, :require_authenticated_user])
+
+    get("/force_logout", UserSessionController, :force_logout)
+    get("/log_out", UserSessionController, :delete)
+    delete("/log_out", UserSessionController, :delete)
+    get("/confirm", UserConfirmationController, :new)
+    post("/confirm", UserConfirmationController, :create)
+    get("/confirm/:token", UserConfirmationController, :confirm)
   end
 
   # Other scopes may use custom stacks.
