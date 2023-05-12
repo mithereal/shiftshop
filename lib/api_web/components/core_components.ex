@@ -691,7 +691,7 @@ defmodule ApiWeb.CoreComponents do
   a sidebar with the path and current user.
   """
   attr :current_path, :string, required: true
-  attr :current_user, :list, required: true
+  attr :current_user, :string, required: true
   slot :inner_block, required: true
   def user_sidebar(assigns)  do
     ~H"""
