@@ -51,7 +51,7 @@ defmodule ApiWeb.UserSessionController do
       _other ->
         socket
         |> put_flash(:error, "You must log in to access this page.")
-        |> redirect(to: Routes.user_session_path(socket, :new))
+        |> redirect(to: {~p"/users/log_in"})
     end
   end
 end
