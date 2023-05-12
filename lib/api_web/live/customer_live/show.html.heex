@@ -1,0 +1,61 @@
+<.header>
+  Customer <%= @customer.id %>
+  <:subtitle>This is a customer record from your database.</:subtitle>
+  <:actions>
+    <.link patch={~p"/customer/#{@customer}/show/edit"} phx-click={JS.push_focus()}>
+      <.button>Edit customer</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Customer"><%= @customer.customer_id %></:item>
+  <:item title="Email"><%= @customer.email %></:item>
+  <:item title="Password"><%= @customer.password %></:item>
+  <:item title="Billing company"><%= @customer.billing_company %></:item>
+  <:item title="Billing first name"><%= @customer.billing_first_name %></:item>
+  <:item title="Billing last name"><%= @customer.billing_last_name %></:item>
+  <:item title="Billing address 1"><%= @customer.billing_address_1 %></:item>
+  <:item title="Billing address 2"><%= @customer.billing_address_2 %></:item>
+  <:item title="Billing city"><%= @customer.billing_city %></:item>
+  <:item title="Billing state"><%= @customer.billing_state %></:item>
+  <:item title="Billing zip code"><%= @customer.billing_zip_code %></:item>
+  <:item title="Billing country"><%= @customer.billing_country %></:item>
+  <:item title="Billing phone number"><%= @customer.billing_phone_number %></:item>
+  <:item title="Billing taxid"><%= @customer.billing_taxid %></:item>
+  <:item title="Shipping company"><%= @customer.shipping_company %></:item>
+  <:item title="Shipping first name"><%= @customer.shipping_first_name %></:item>
+  <:item title="Shipping last name"><%= @customer.shipping_last_name %></:item>
+  <:item title="Shipping address 1"><%= @customer.shipping_address_1 %></:item>
+  <:item title="Shipping address 2"><%= @customer.shipping_address_2 %></:item>
+  <:item title="Shipping city"><%= @customer.shipping_city %></:item>
+  <:item title="Shipping state"><%= @customer.shipping_state %></:item>
+  <:item title="Shipping zipcode"><%= @customer.shipping_zipcode %></:item>
+  <:item title="Shipping country"><%= @customer.shipping_country %></:item>
+  <:item title="Shipping phone number"><%= @customer.shipping_phone_number %></:item>
+  <:item title="Shipping address type"><%= @customer.shipping_address_type %></:item>
+  <:item title="Customer group"><%= @customer.customer_group_id %></:item>
+  <:item title="Enabled"><%= @customer.enabled %></:item>
+  <:item title="Mail list"><%= @customer.mail_list %></:item>
+  <:item title="Non taxable"><%= @customer.non_taxable %></:item>
+  <:item title="Disable billing same as shipping"><%= @customer.disable_billing_same_as_shipping %></:item>
+  <:item title="Comments"><%= @customer.comments %></:item>
+  <:item title="Additional field 1"><%= @customer.additional_field_1 %></:item>
+  <:item title="Additional field 2"><%= @customer.additional_field_2 %></:item>
+  <:item title="Additional field 3"><%= @customer.additional_field_3 %></:item>
+  <:item title="Total store credit"><%= @customer.total_store_credit %></:item>
+  <:item title="Reset password"><%= @customer.reset_password %></:item>
+</.list>
+
+<.back navigate={~p"/customer"}>Back to customer</.back>
+
+<.modal :if={@live_action == :edit} id="customer-modal" show on_cancel={JS.patch(~p"/customer/#{@customer}")}>
+  <.live_component
+    module={ApiWeb.CustomerLive.FormComponent}
+    id={@customer.id}
+    title={@page_title}
+    action={@live_action}
+    customer={@customer}
+    patch={~p"/customer/#{@customer}"}
+  />
+</.modal>

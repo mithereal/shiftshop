@@ -1,0 +1,173 @@
+<.header>
+  Listing Products
+  <:actions>
+    <.link patch={~p"/products/new"}>
+      <.button>New Product</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="products"
+  rows={@streams.products}
+  row_click={fn {_id, product} -> JS.navigate(~p"/products/#{product}") end}
+>
+  <:col :let={{_id, product}} label="Skuinfo"><%= product.skuinfo %></:col>
+  <:col :let={{_id, product}} label="Mfgid"><%= product.mfgid %></:col>
+  <:col :let={{_id, product}} label="Short description"><%= product.short_description %></:col>
+  <:col :let={{_id, product}} label="Manufacturer"><%= product.manufacturer_id %></:col>
+  <:col :let={{_id, product}} label="Manufacturer name"><%= product.manufacturer_name %></:col>
+  <:col :let={{_id, product}} label="Distributor list"><%= product.distributor_list %></:col>
+  <:col :let={{_id, product}} label="Last update"><%= product.last_update %></:col>
+  <:col :let={{_id, product}} label="User"><%= product.user_id %></:col>
+  <:col :let={{_id, product}} label="Gtin"><%= product.gtin %></:col>
+  <:col :let={{_id, product}} label="Category list"><%= product.category_list %></:col>
+  <:col :let={{_id, product}} label="External ids list"><%= product.external_ids_list %></:col>
+  <:col :let={{_id, product}} label="Category external ids list"><%= product.category_external_ids_list %></:col>
+  <:col :let={{_id, product}} label="Non taxable"><%= product.non_taxable %></:col>
+  <:col :let={{_id, product}} label="Not for sale"><%= product.not_for_sale %></:col>
+  <:col :let={{_id, product}} label="Hide"><%= product.hide %></:col>
+  <:col :let={{_id, product}} label="Gift certificate"><%= product.gift_certificate %></:col>
+  <:col :let={{_id, product}} label="Home special"><%= product.home_special %></:col>
+  <:col :let={{_id, product}} label="Category special"><%= product.category_special %></:col>
+  <:col :let={{_id, product}} label="Non searchable"><%= product.non_searchable %></:col>
+  <:col :let={{_id, product}} label="Gift wrap item"><%= product.gift_wrap_item %></:col>
+  <:col :let={{_id, product}} label="Ship cost"><%= product.ship_cost %></:col>
+  <:col :let={{_id, product}} label="Weight"><%= product.weight %></:col>
+  <:col :let={{_id, product}} label="Height"><%= product.height %></:col>
+  <:col :let={{_id, product}} label="Width"><%= product.width %></:col>
+  <:col :let={{_id, product}} label="Depth"><%= product.depth %></:col>
+  <:col :let={{_id, product}} label="Self ship"><%= product.self_ship %></:col>
+  <:col :let={{_id, product}} label="Free shipping"><%= product.free_shipping %></:col>
+  <:col :let={{_id, product}} label="Reward points"><%= product.reward_points %></:col>
+  <:col :let={{_id, product}} label="Redeem points"><%= product.redeem_points %></:col>
+  <:col :let={{_id, product}} label="Disable rewards"><%= product.disable_rewards %></:col>
+  <:col :let={{_id, product}} label="Stock alert"><%= product.stock_alert %></:col>
+  <:col :let={{_id, product}} label="Reorder quantity"><%= product.reorder_quantity %></:col>
+  <:col :let={{_id, product}} label="In stock message"><%= product.in_stock_message %></:col>
+  <:col :let={{_id, product}} label="Out of stock message"><%= product.out_of_stock_message %></:col>
+  <:col :let={{_id, product}} label="Back order message"><%= product.back_order_message %></:col>
+  <:col :let={{_id, product}} label="Inventory control"><%= product.inventory_control %></:col>
+  <:col :let={{_id, product}} label="Warehouse location"><%= product.warehouse_location %></:col>
+  <:col :let={{_id, product}} label="Warehouse bin"><%= product.warehouse_bin %></:col>
+  <:col :let={{_id, product}} label="Warehouse aisle"><%= product.warehouse_aisle %></:col>
+  <:col :let={{_id, product}} label="Warehouse custom"><%= product.warehouse_custom %></:col>
+  <:col :let={{_id, product}} label="Description"><%= product.description %></:col>
+  <:col :let={{_id, product}} label="Keywords"><%= product.keywords %></:col>
+  <:col :let={{_id, product}} label="Extra field 1"><%= product.extra_field_1 %></:col>
+  <:col :let={{_id, product}} label="Extra field 2"><%= product.extra_field_2 %></:col>
+  <:col :let={{_id, product}} label="Extra field 3"><%= product.extra_field_3 %></:col>
+  <:col :let={{_id, product}} label="Extra field 4"><%= product.extra_field_4 %></:col>
+  <:col :let={{_id, product}} label="Extra field 5"><%= product.extra_field_5 %></:col>
+  <:col :let={{_id, product}} label="Extra field 6"><%= product.extra_field_6 %></:col>
+  <:col :let={{_id, product}} label="Extra field 7"><%= product.extra_field_7 %></:col>
+  <:col :let={{_id, product}} label="Extra field 8"><%= product.extra_field_8 %></:col>
+  <:col :let={{_id, product}} label="Extra field 9"><%= product.extra_field_9 %></:col>
+  <:col :let={{_id, product}} label="Extra field 10"><%= product.extra_field_10 %></:col>
+  <:col :let={{_id, product}} label="Extra field 11"><%= product.extra_field_11 %></:col>
+  <:col :let={{_id, product}} label="Extra field 12"><%= product.extra_field_12 %></:col>
+  <:col :let={{_id, product}} label="Extra field 13"><%= product.extra_field_13 %></:col>
+  <:col :let={{_id, product}} label="Feature list"><%= product.feature_list %></:col>
+  <:col :let={{_id, product}} label="Plugin list"><%= product.plugin_list %></:col>
+  <:col :let={{_id, product}} label="Sample enable"><%= product.sample_enable %></:col>
+  <:col :let={{_id, product}} label="Sample name"><%= product.sample_name %></:col>
+  <:col :let={{_id, product}} label="Sample skuprefix"><%= product.sample_skuprefix %></:col>
+  <:col :let={{_id, product}} label="Sample price"><%= product.sample_price %></:col>
+  <:col :let={{_id, product}} label="Sample weight"><%= product.sample_weight %></:col>
+  <:col :let={{_id, product}} label="Review average"><%= product.review_average %></:col>
+  <:col :let={{_id, product}} label="Review count"><%= product.review_count %></:col>
+  <:col :let={{_id, product}} label="Main image file"><%= product.main_image_file %></:col>
+  <:col :let={{_id, product}} label="Main image caption"><%= product.main_image_caption %></:col>
+  <:col :let={{_id, product}} label="Thumbnail file"><%= product.thumbnail_file %></:col>
+  <:col :let={{_id, product}} label="Media file"><%= product.media_file %></:col>
+  <:col :let={{_id, product}} label="Additional image file 2"><%= product.additional_image_file_2 %></:col>
+  <:col :let={{_id, product}} label="Additional image caption 2"><%= product.additional_image_caption_2 %></:col>
+  <:col :let={{_id, product}} label="Additional image file 3"><%= product.additional_image_file_3 %></:col>
+  <:col :let={{_id, product}} label="Additional image caption 3"><%= product.additional_image_caption_3 %></:col>
+  <:col :let={{_id, product}} label="Additional image file 4"><%= product.additional_image_file_4 %></:col>
+  <:col :let={{_id, product}} label="Additional image caption 4"><%= product.additional_image_caption_4 %></:col>
+  <:col :let={{_id, product}} label="Image gallery list"><%= product.image_gallery_list %></:col>
+  <:col :let={{_id, product}} label="Option set list"><%= product.option_set_list %></:col>
+  <:col :let={{_id, product}} label="Advanced option list"><%= product.advanced_option_list %></:col>
+  <:col :let={{_id, product}} label="Related product list"><%= product.related_product_list %></:col>
+  <:col :let={{_id, product}} label="Up selling item list"><%= product.up_selling_item_list %></:col>
+  <:col :let={{_id, product}} label="Discount list"><%= product.discount_list %></:col>
+  <:col :let={{_id, product}} label="Do not use category options"><%= product.do_not_use_category_options %></:col>
+  <:col :let={{_id, product}} label="Date created"><%= product.date_created %></:col>
+  <:col :let={{_id, product}} label="Listing template"><%= product.listing_template_id %></:col>
+  <:col :let={{_id, product}} label="Listing template name"><%= product.listing_template_name %></:col>
+  <:col :let={{_id, product}} label="Login required option"><%= product.login_required_option_id %></:col>
+  <:col :let={{_id, product}} label="Login required option name"><%= product.login_required_option_name %></:col>
+  <:col :let={{_id, product}} label="Login required option redirect to"><%= product.login_required_option_redirect_to %></:col>
+  <:col :let={{_id, product}} label="Allow access customer group"><%= product.allow_access_customer_group_id %></:col>
+  <:col :let={{_id, product}} label="Allow access customer group name"><%= product.allow_access_customer_group_name %></:col>
+  <:col :let={{_id, product}} label="Rmamax period"><%= product.rmamax_period %></:col>
+  <:col :let={{_id, product}} label="Canonical url"><%= product.canonical_url %></:col>
+  <:col :let={{_id, product}} label="Tax code"><%= product.tax_code %></:col>
+  <:col :let={{_id, product}} label="Display text"><%= product.display_text %></:col>
+  <:col :let={{_id, product}} label="Minimum quantity"><%= product.minimum_quantity %></:col>
+  <:col :let={{_id, product}} label="Maximum quantity"><%= product.maximum_quantity %></:col>
+  <:col :let={{_id, product}} label="Allow only multiples"><%= product.allow_only_multiples %></:col>
+  <:col :let={{_id, product}} label="Allow fractional quantity"><%= product.allow_fractional_quantity %></:col>
+  <:col :let={{_id, product}} label="Quantity options"><%= product.quantity_options %></:col>
+  <:col :let={{_id, product}} label="Group options for quantity pricing"><%= product.group_options_for_quantity_pricing %></:col>
+  <:col :let={{_id, product}} label="Apply quantity discount to options"><%= product.apply_quantity_discount_to_options %></:col>
+  <:col :let={{_id, product}} label="Enable make an offer feature"><%= product.enable_make_an_offer_feature %></:col>
+  <:col :let={{_id, product}} label="Minimum acceptable offer"><%= product.minimum_acceptable_offer %></:col>
+  <:col :let={{_id, product}} label="Price level 1"><%= product.price_level_1 %></:col>
+  <:col :let={{_id, product}} label="Price level 1 hide"><%= product.price_level_1_hide %></:col>
+  <:col :let={{_id, product}} label="Price level 2"><%= product.price_level_2 %></:col>
+  <:col :let={{_id, product}} label="Price level 2 hide"><%= product.price_level_2_hide %></:col>
+  <:col :let={{_id, product}} label="Price level 3"><%= product.price_level_3 %></:col>
+  <:col :let={{_id, product}} label="Price level 3 hide"><%= product.price_level_3_hide %></:col>
+  <:col :let={{_id, product}} label="Price level 4"><%= product.price_level_4 %></:col>
+  <:col :let={{_id, product}} label="Price level 4 hide"><%= product.price_level_4_hide %></:col>
+  <:col :let={{_id, product}} label="Price level 5"><%= product.price_level_5 %></:col>
+  <:col :let={{_id, product}} label="Price level 5 hide"><%= product.price_level_5_hide %></:col>
+  <:col :let={{_id, product}} label="Price level 6"><%= product.price_level_6 %></:col>
+  <:col :let={{_id, product}} label="Price level 6 hide"><%= product.price_level_6_hide %></:col>
+  <:col :let={{_id, product}} label="Price level 7"><%= product.price_level_7 %></:col>
+  <:col :let={{_id, product}} label="Price level 7 hide"><%= product.price_level_7_hide %></:col>
+  <:col :let={{_id, product}} label="Price level 8"><%= product.price_level_8 %></:col>
+  <:col :let={{_id, product}} label="Price level 8 hide"><%= product.price_level_8_hide %></:col>
+  <:col :let={{_id, product}} label="Price level 9"><%= product.price_level_9 %></:col>
+  <:col :let={{_id, product}} label="Price level 9 hide"><%= product.price_level_9_hide %></:col>
+  <:col :let={{_id, product}} label="Price level 10"><%= product.price_level_10 %></:col>
+  <:col :let={{_id, product}} label="Price level 10 hide"><%= product.price_level_10_hide %></:col>
+  <:col :let={{_id, product}} label="Buy button link"><%= product.buy_button_link %></:col>
+  <:col :let={{_id, product}} label="Product link"><%= product.product_link %></:col>
+  <:col :let={{_id, product}} label="Title"><%= product.title %></:col>
+  <:col :let={{_id, product}} label="Custom file name"><%= product.custom_file_name %></:col>
+  <:col :let={{_id, product}} label="Redirect link"><%= product.redirect_link %></:col>
+  <:col :let={{_id, product}} label="Meta tags"><%= product.meta_tags %></:col>
+  <:col :let={{_id, product}} label="Special instructions"><%= product.special_instructions %></:col>
+  <:col :let={{_id, product}} label="Assign key"><%= product.assign_key %></:col>
+  <:col :let={{_id, product}} label="Re use keys"><%= product.re_use_keys %></:col>
+  <:col :let={{_id, product}} label="Serial list"><%= product.serial_list %></:col>
+  <:col :let={{_id, product}} label="Eproduct list"><%= product.eproduct_list %></:col>
+  <:action :let={{_id, product}}>
+    <div class="sr-only">
+      <.link navigate={~p"/products/#{product}"}>Show</.link>
+    </div>
+    <.link patch={~p"/products/#{product}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, product}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: product.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal :if={@live_action in [:new, :edit]} id="product-modal" show on_cancel={JS.patch(~p"/products")}>
+  <.live_component
+    module={ApiWeb.ProductLive.FormComponent}
+    id={@product.id || :new}
+    title={@page_title}
+    action={@live_action}
+    product={@product}
+    patch={~p"/products"}
+  />
+</.modal>

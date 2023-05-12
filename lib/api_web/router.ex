@@ -12,6 +12,16 @@ defmodule ApiWeb.Router do
     plug(:fetch_current_user)
   end
 
+  pipeline :user do
+    plug :accepts, ["html"]
+    plug :fetch_session
+    plug :fetch_live_flash
+    plug :put_root_layout, {ApiWeb.Layouts, :user}
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
+    plug(:fetch_current_user)
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -33,29 +43,37 @@ defmodule ApiWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :landing
+  end
 
-    live "/customer", CustomerLive.Index, :index
-    live "/customer/new", CustomerLive.Index, :new
-    live "/customer/:id/edit", CustomerLive.Index, :edit
+  scope "/", ApiWeb do
+    pipe_through :user
 
-    live "/customer/:id", CustomerLive.Show, :show
-    live "/customer/:id/show/edit", CustomerLive.Show, :edit
+    live_session :require_authenticated_user,
+      on_mount: [
+        {ApiWeb.UserAuth, :ensure_authenticated},
+        {ApiWeb.Path, :put_path_in_socket}
+      ] do
+      live "/customers", CustomerLive.Index, :index
+      live "/customers/new", CustomerLive.Index, :new
+      live "/customers/:id/edit", CustomerLive.Index, :edit
 
+      live "/customers/:id", CustomerLive.Show, :show
+      live "/customers/:id/show/edit", CustomerLive.Show, :edit
 
-    live "/products", ProductLive.Index, :index
-    live "/products/new", ProductLive.Index, :new
-    live "/products/:id/edit", ProductLive.Index, :edit
+      live "/products", ProductLive.Index, :index
+      live "/products/new", ProductLive.Index, :new
+      live "/products/:id/edit", ProductLive.Index, :edit
 
-    live "/products/:id", ProductLive.Show, :show
-    live "/products/:id/show/edit", ProductLive.Show, :edit
+      live "/products/:id", ProductLive.Show, :show
+      live "/products/:id/show/edit", ProductLive.Show, :edit
 
-    live "/orders", OrderLive.Index, :index
-    live "/orders/new", OrderLive.Index, :new
-    live "/orders/:id/edit", OrderLive.Index, :edit
+      live "/orders", OrderLive.Index, :index
+      live "/orders/new", OrderLive.Index, :new
+      live "/orders/:id/edit", OrderLive.Index, :edit
 
-    live "/orders/:id", OrderLive.Show, :show
-    live "/orders/:id/show/edit", OrderLive.Show, :edit
-
+      live "/orders/:id", OrderLive.Show, :show
+      live "/orders/:id/show/edit", OrderLive.Show, :edit
+    end
   end
 
   scope "/auth", ApiWeb do
@@ -67,7 +85,7 @@ defmodule ApiWeb.Router do
   end
 
   scope "/settings", ApiWeb do
-    pipe_through [:browser,:browser_with_no_csrf]
+    pipe_through [:browser, :browser_with_no_csrf]
 
     get "/:provider", ProviderSettingsController, :edit
   end

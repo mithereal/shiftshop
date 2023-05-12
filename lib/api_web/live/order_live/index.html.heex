@@ -1,0 +1,96 @@
+<.header>
+  Listing Orders
+  <:actions>
+    <.link patch={~p"/orders/new"}>
+      <.button>New Order</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="orders"
+  rows={@streams.orders}
+  row_click={fn {_id, order} -> JS.navigate(~p"/orders/#{order}") end}
+>
+  <:col :let={{_id, order}} label="Invoice number prefix"><%= order.invoice_number_prefix %></:col>
+  <:col :let={{_id, order}} label="Invoice number"><%= order.invoice_number %></:col>
+  <:col :let={{_id, order}} label="Order"><%= order.order_id %></:col>
+  <:col :let={{_id, order}} label="Customer"><%= order.customer_id %></:col>
+  <:col :let={{_id, order}} label="Order date"><%= order.order_date %></:col>
+  <:col :let={{_id, order}} label="Order status"><%= order.order_status_id %></:col>
+  <:col :let={{_id, order}} label="Last update"><%= order.last_update %></:col>
+  <:col :let={{_id, order}} label="User"><%= order.user_id %></:col>
+  <:col :let={{_id, order}} label="Sales person"><%= order.sales_person %></:col>
+  <:col :let={{_id, order}} label="Continue url"><%= order.continue_url %></:col>
+  <:col :let={{_id, order}} label="Alternate order"><%= order.alternate_order_id %></:col>
+  <:col :let={{_id, order}} label="Order type"><%= order.order_type %></:col>
+  <:col :let={{_id, order}} label="Payment token"><%= order.payment_token_id %></:col>
+  <:col :let={{_id, order}} label="Billing first name"><%= order.billing_first_name %></:col>
+  <:col :let={{_id, order}} label="Billing last name"><%= order.billing_last_name %></:col>
+  <:col :let={{_id, order}} label="Billing company"><%= order.billing_company %></:col>
+  <:col :let={{_id, order}} label="Billing address"><%= order.billing_address %></:col>
+  <:col :let={{_id, order}} label="Billing address 2"><%= order.billing_address_2 %></:col>
+  <:col :let={{_id, order}} label="Billing city"><%= order.billing_city %></:col>
+  <:col :let={{_id, order}} label="Billing state"><%= order.billing_state %></:col>
+  <:col :let={{_id, order}} label="Billing zip code"><%= order.billing_zip_code %></:col>
+  <:col :let={{_id, order}} label="Billing country"><%= order.billing_country %></:col>
+  <:col :let={{_id, order}} label="Billing phone number"><%= order.billing_phone_number %></:col>
+  <:col :let={{_id, order}} label="Billing email"><%= order.billing_email %></:col>
+  <:col :let={{_id, order}} label="Billing payment method"><%= order.billing_payment_method %></:col>
+  <:col :let={{_id, order}} label="Billing on line payment"><%= order.billing_on_line_payment %></:col>
+  <:col :let={{_id, order}} label="Billing payment method"><%= order.billing_payment_method_id %></:col>
+  <:col :let={{_id, order}} label="Shipment list"><%= order.shipment_list %></:col>
+  <:col :let={{_id, order}} label="Order item list"><%= order.order_item_list %></:col>
+  <:col :let={{_id, order}} label="Promotion list"><%= order.promotion_list %></:col>
+  <:col :let={{_id, order}} label="Order discount"><%= order.order_discount %></:col>
+  <:col :let={{_id, order}} label="Order discount coupon"><%= order.order_discount_coupon %></:col>
+  <:col :let={{_id, order}} label="Order discount promotion"><%= order.order_discount_promotion %></:col>
+  <:col :let={{_id, order}} label="Sales tax"><%= order.sales_tax %></:col>
+  <:col :let={{_id, order}} label="Sales tax 2"><%= order.sales_tax_2 %></:col>
+  <:col :let={{_id, order}} label="Sales tax 3"><%= order.sales_tax_3 %></:col>
+  <:col :let={{_id, order}} label="Order amount"><%= order.order_amount %></:col>
+  <:col :let={{_id, order}} label="Affiliate commission"><%= order.affiliate_commission %></:col>
+  <:col :let={{_id, order}} label="Transaction list"><%= order.transaction_list %></:col>
+  <:col :let={{_id, order}} label="Card type"><%= order.card_type %></:col>
+  <:col :let={{_id, order}} label="Card number"><%= order.card_number %></:col>
+  <:col :let={{_id, order}} label="Card name"><%= order.card_name %></:col>
+  <:col :let={{_id, order}} label="Card expiration month"><%= order.card_expiration_month %></:col>
+  <:col :let={{_id, order}} label="Card expiration year"><%= order.card_expiration_year %></:col>
+  <:col :let={{_id, order}} label="Card issue number"><%= order.card_issue_number %></:col>
+  <:col :let={{_id, order}} label="Card start month"><%= order.card_start_month %></:col>
+  <:col :let={{_id, order}} label="Card start year"><%= order.card_start_year %></:col>
+  <:col :let={{_id, order}} label="Card address"><%= order.card_address %></:col>
+  <:col :let={{_id, order}} label="Card verification"><%= order.card_verification %></:col>
+  <:col :let={{_id, order}} label="Reward points"><%= order.reward_points %></:col>
+  <:col :let={{_id, order}} label="Question list"><%= order.question_list %></:col>
+  <:col :let={{_id, order}} label="Referer"><%= order.referer %></:col>
+  <:col :let={{_id, order}} label="Ip"><%= order.ip %></:col>
+  <:col :let={{_id, order}} label="Customer comments"><%= order.customer_comments %></:col>
+  <:col :let={{_id, order}} label="Internal comments"><%= order.internal_comments %></:col>
+  <:col :let={{_id, order}} label="External comments"><%= order.external_comments %></:col>
+  <:action :let={{_id, order}}>
+    <div class="sr-only">
+      <.link navigate={~p"/orders/#{order}"}>Show</.link>
+    </div>
+    <.link patch={~p"/orders/#{order}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, order}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: order.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal :if={@live_action in [:new, :edit]} id="order-modal" show on_cancel={JS.patch(~p"/orders")}>
+  <.live_component
+    module={ApiWeb.OrderLive.FormComponent}
+    id={@order.id || :new}
+    title={@page_title}
+    action={@live_action}
+    order={@order}
+    patch={~p"/orders"}
+  />
+</.modal>

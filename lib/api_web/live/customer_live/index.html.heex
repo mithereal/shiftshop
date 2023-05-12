@@ -1,0 +1,76 @@
+<.header>
+  Listing Customer
+  <:actions>
+    <.link patch={~p"/customer/new"}>
+      <.button>New Customer</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table
+  id="customer"
+  rows={@streams.customer_collection}
+  row_click={fn {_id, customer} -> JS.navigate(~p"/customer/#{customer}") end}
+>
+  <:col :let={{_id, customer}} label="Customer"><%= customer.customer_id %></:col>
+  <:col :let={{_id, customer}} label="Email"><%= customer.email %></:col>
+  <:col :let={{_id, customer}} label="Password"><%= customer.password %></:col>
+  <:col :let={{_id, customer}} label="Billing company"><%= customer.billing_company %></:col>
+  <:col :let={{_id, customer}} label="Billing first name"><%= customer.billing_first_name %></:col>
+  <:col :let={{_id, customer}} label="Billing last name"><%= customer.billing_last_name %></:col>
+  <:col :let={{_id, customer}} label="Billing address 1"><%= customer.billing_address_1 %></:col>
+  <:col :let={{_id, customer}} label="Billing address 2"><%= customer.billing_address_2 %></:col>
+  <:col :let={{_id, customer}} label="Billing city"><%= customer.billing_city %></:col>
+  <:col :let={{_id, customer}} label="Billing state"><%= customer.billing_state %></:col>
+  <:col :let={{_id, customer}} label="Billing zip code"><%= customer.billing_zip_code %></:col>
+  <:col :let={{_id, customer}} label="Billing country"><%= customer.billing_country %></:col>
+  <:col :let={{_id, customer}} label="Billing phone number"><%= customer.billing_phone_number %></:col>
+  <:col :let={{_id, customer}} label="Billing taxid"><%= customer.billing_taxid %></:col>
+  <:col :let={{_id, customer}} label="Shipping company"><%= customer.shipping_company %></:col>
+  <:col :let={{_id, customer}} label="Shipping first name"><%= customer.shipping_first_name %></:col>
+  <:col :let={{_id, customer}} label="Shipping last name"><%= customer.shipping_last_name %></:col>
+  <:col :let={{_id, customer}} label="Shipping address 1"><%= customer.shipping_address_1 %></:col>
+  <:col :let={{_id, customer}} label="Shipping address 2"><%= customer.shipping_address_2 %></:col>
+  <:col :let={{_id, customer}} label="Shipping city"><%= customer.shipping_city %></:col>
+  <:col :let={{_id, customer}} label="Shipping state"><%= customer.shipping_state %></:col>
+  <:col :let={{_id, customer}} label="Shipping zipcode"><%= customer.shipping_zipcode %></:col>
+  <:col :let={{_id, customer}} label="Shipping country"><%= customer.shipping_country %></:col>
+  <:col :let={{_id, customer}} label="Shipping phone number"><%= customer.shipping_phone_number %></:col>
+  <:col :let={{_id, customer}} label="Shipping address type"><%= customer.shipping_address_type %></:col>
+  <:col :let={{_id, customer}} label="Customer group"><%= customer.customer_group_id %></:col>
+  <:col :let={{_id, customer}} label="Enabled"><%= customer.enabled %></:col>
+  <:col :let={{_id, customer}} label="Mail list"><%= customer.mail_list %></:col>
+  <:col :let={{_id, customer}} label="Non taxable"><%= customer.non_taxable %></:col>
+  <:col :let={{_id, customer}} label="Disable billing same as shipping"><%= customer.disable_billing_same_as_shipping %></:col>
+  <:col :let={{_id, customer}} label="Comments"><%= customer.comments %></:col>
+  <:col :let={{_id, customer}} label="Additional field 1"><%= customer.additional_field_1 %></:col>
+  <:col :let={{_id, customer}} label="Additional field 2"><%= customer.additional_field_2 %></:col>
+  <:col :let={{_id, customer}} label="Additional field 3"><%= customer.additional_field_3 %></:col>
+  <:col :let={{_id, customer}} label="Total store credit"><%= customer.total_store_credit %></:col>
+  <:col :let={{_id, customer}} label="Reset password"><%= customer.reset_password %></:col>
+  <:action :let={{_id, customer}}>
+    <div class="sr-only">
+      <.link navigate={~p"/customer/#{customer}"}>Show</.link>
+    </div>
+    <.link patch={~p"/customer/#{customer}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={{id, customer}}>
+    <.link
+      phx-click={JS.push("delete", value: %{id: customer.id}) |> hide("##{id}")}
+      data-confirm="Are you sure?"
+    >
+      Delete
+    </.link>
+  </:action>
+</.table>
+
+<.modal :if={@live_action in [:new, :edit]} id="customer-modal" show on_cancel={JS.patch(~p"/customer")}>
+  <.live_component
+    module={ApiWeb.CustomerLive.FormComponent}
+    id={@customer.id || :new}
+    title={@page_title}
+    action={@live_action}
+    customer={@customer}
+    patch={~p"/customer"}
+  />
+</.modal>

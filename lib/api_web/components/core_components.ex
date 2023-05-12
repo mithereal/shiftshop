@@ -686,4 +686,20 @@ defmodule ApiWeb.CoreComponents do
   def translate_errors(errors, field) when is_list(errors) do
     for {^field, {msg, opts}} <- errors, do: translate_error({msg, opts})
   end
+
+  @doc """
+  a sidebar with the path and current user.
+  """
+  attr :current_path, :string, required: true
+  attr :current_user, :list, required: true
+  slot :inner_block, required: true
+  def sidebar_with_path(assigns)  do
+    ~H"""
+    <aside>
+    <div>{@current_user}</div>
+    <div>{@current_path}</div>
+    <%= render_slot(@inner_block) %>
+    </aside>
+    """
+  end
 end

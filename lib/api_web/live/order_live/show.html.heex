@@ -1,0 +1,81 @@
+<.header>
+  Order <%= @order.id %>
+  <:subtitle>This is a order record from your database.</:subtitle>
+  <:actions>
+    <.link patch={~p"/orders/#{@order}/show/edit"} phx-click={JS.push_focus()}>
+      <.button>Edit order</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Invoice number prefix"><%= @order.invoice_number_prefix %></:item>
+  <:item title="Invoice number"><%= @order.invoice_number %></:item>
+  <:item title="Order"><%= @order.order_id %></:item>
+  <:item title="Customer"><%= @order.customer_id %></:item>
+  <:item title="Order date"><%= @order.order_date %></:item>
+  <:item title="Order status"><%= @order.order_status_id %></:item>
+  <:item title="Last update"><%= @order.last_update %></:item>
+  <:item title="User"><%= @order.user_id %></:item>
+  <:item title="Sales person"><%= @order.sales_person %></:item>
+  <:item title="Continue url"><%= @order.continue_url %></:item>
+  <:item title="Alternate order"><%= @order.alternate_order_id %></:item>
+  <:item title="Order type"><%= @order.order_type %></:item>
+  <:item title="Payment token"><%= @order.payment_token_id %></:item>
+  <:item title="Billing first name"><%= @order.billing_first_name %></:item>
+  <:item title="Billing last name"><%= @order.billing_last_name %></:item>
+  <:item title="Billing company"><%= @order.billing_company %></:item>
+  <:item title="Billing address"><%= @order.billing_address %></:item>
+  <:item title="Billing address 2"><%= @order.billing_address_2 %></:item>
+  <:item title="Billing city"><%= @order.billing_city %></:item>
+  <:item title="Billing state"><%= @order.billing_state %></:item>
+  <:item title="Billing zip code"><%= @order.billing_zip_code %></:item>
+  <:item title="Billing country"><%= @order.billing_country %></:item>
+  <:item title="Billing phone number"><%= @order.billing_phone_number %></:item>
+  <:item title="Billing email"><%= @order.billing_email %></:item>
+  <:item title="Billing payment method"><%= @order.billing_payment_method %></:item>
+  <:item title="Billing on line payment"><%= @order.billing_on_line_payment %></:item>
+  <:item title="Billing payment method"><%= @order.billing_payment_method_id %></:item>
+  <:item title="Shipment list"><%= @order.shipment_list %></:item>
+  <:item title="Order item list"><%= @order.order_item_list %></:item>
+  <:item title="Promotion list"><%= @order.promotion_list %></:item>
+  <:item title="Order discount"><%= @order.order_discount %></:item>
+  <:item title="Order discount coupon"><%= @order.order_discount_coupon %></:item>
+  <:item title="Order discount promotion"><%= @order.order_discount_promotion %></:item>
+  <:item title="Sales tax"><%= @order.sales_tax %></:item>
+  <:item title="Sales tax 2"><%= @order.sales_tax_2 %></:item>
+  <:item title="Sales tax 3"><%= @order.sales_tax_3 %></:item>
+  <:item title="Order amount"><%= @order.order_amount %></:item>
+  <:item title="Affiliate commission"><%= @order.affiliate_commission %></:item>
+  <:item title="Transaction list"><%= @order.transaction_list %></:item>
+  <:item title="Card type"><%= @order.card_type %></:item>
+  <:item title="Card number"><%= @order.card_number %></:item>
+  <:item title="Card name"><%= @order.card_name %></:item>
+  <:item title="Card expiration month"><%= @order.card_expiration_month %></:item>
+  <:item title="Card expiration year"><%= @order.card_expiration_year %></:item>
+  <:item title="Card issue number"><%= @order.card_issue_number %></:item>
+  <:item title="Card start month"><%= @order.card_start_month %></:item>
+  <:item title="Card start year"><%= @order.card_start_year %></:item>
+  <:item title="Card address"><%= @order.card_address %></:item>
+  <:item title="Card verification"><%= @order.card_verification %></:item>
+  <:item title="Reward points"><%= @order.reward_points %></:item>
+  <:item title="Question list"><%= @order.question_list %></:item>
+  <:item title="Referer"><%= @order.referer %></:item>
+  <:item title="Ip"><%= @order.ip %></:item>
+  <:item title="Customer comments"><%= @order.customer_comments %></:item>
+  <:item title="Internal comments"><%= @order.internal_comments %></:item>
+  <:item title="External comments"><%= @order.external_comments %></:item>
+</.list>
+
+<.back navigate={~p"/orders"}>Back to orders</.back>
+
+<.modal :if={@live_action == :edit} id="order-modal" show on_cancel={JS.patch(~p"/orders/#{@order}")}>
+  <.live_component
+    module={ApiWeb.OrderLive.FormComponent}
+    id={@order.id}
+    title={@page_title}
+    action={@live_action}
+    order={@order}
+    patch={~p"/orders/#{@order}"}
+  />
+</.modal>

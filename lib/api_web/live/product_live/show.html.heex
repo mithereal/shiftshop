@@ -1,0 +1,158 @@
+<.header>
+  Product <%= @product.id %>
+  <:subtitle>This is a product record from your database.</:subtitle>
+  <:actions>
+    <.link patch={~p"/products/#{@product}/show/edit"} phx-click={JS.push_focus()}>
+      <.button>Edit product</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Skuinfo"><%= @product.skuinfo %></:item>
+  <:item title="Mfgid"><%= @product.mfgid %></:item>
+  <:item title="Short description"><%= @product.short_description %></:item>
+  <:item title="Manufacturer"><%= @product.manufacturer_id %></:item>
+  <:item title="Manufacturer name"><%= @product.manufacturer_name %></:item>
+  <:item title="Distributor list"><%= @product.distributor_list %></:item>
+  <:item title="Last update"><%= @product.last_update %></:item>
+  <:item title="User"><%= @product.user_id %></:item>
+  <:item title="Gtin"><%= @product.gtin %></:item>
+  <:item title="Category list"><%= @product.category_list %></:item>
+  <:item title="External ids list"><%= @product.external_ids_list %></:item>
+  <:item title="Category external ids list"><%= @product.category_external_ids_list %></:item>
+  <:item title="Non taxable"><%= @product.non_taxable %></:item>
+  <:item title="Not for sale"><%= @product.not_for_sale %></:item>
+  <:item title="Hide"><%= @product.hide %></:item>
+  <:item title="Gift certificate"><%= @product.gift_certificate %></:item>
+  <:item title="Home special"><%= @product.home_special %></:item>
+  <:item title="Category special"><%= @product.category_special %></:item>
+  <:item title="Non searchable"><%= @product.non_searchable %></:item>
+  <:item title="Gift wrap item"><%= @product.gift_wrap_item %></:item>
+  <:item title="Ship cost"><%= @product.ship_cost %></:item>
+  <:item title="Weight"><%= @product.weight %></:item>
+  <:item title="Height"><%= @product.height %></:item>
+  <:item title="Width"><%= @product.width %></:item>
+  <:item title="Depth"><%= @product.depth %></:item>
+  <:item title="Self ship"><%= @product.self_ship %></:item>
+  <:item title="Free shipping"><%= @product.free_shipping %></:item>
+  <:item title="Reward points"><%= @product.reward_points %></:item>
+  <:item title="Redeem points"><%= @product.redeem_points %></:item>
+  <:item title="Disable rewards"><%= @product.disable_rewards %></:item>
+  <:item title="Stock alert"><%= @product.stock_alert %></:item>
+  <:item title="Reorder quantity"><%= @product.reorder_quantity %></:item>
+  <:item title="In stock message"><%= @product.in_stock_message %></:item>
+  <:item title="Out of stock message"><%= @product.out_of_stock_message %></:item>
+  <:item title="Back order message"><%= @product.back_order_message %></:item>
+  <:item title="Inventory control"><%= @product.inventory_control %></:item>
+  <:item title="Warehouse location"><%= @product.warehouse_location %></:item>
+  <:item title="Warehouse bin"><%= @product.warehouse_bin %></:item>
+  <:item title="Warehouse aisle"><%= @product.warehouse_aisle %></:item>
+  <:item title="Warehouse custom"><%= @product.warehouse_custom %></:item>
+  <:item title="Description"><%= @product.description %></:item>
+  <:item title="Keywords"><%= @product.keywords %></:item>
+  <:item title="Extra field 1"><%= @product.extra_field_1 %></:item>
+  <:item title="Extra field 2"><%= @product.extra_field_2 %></:item>
+  <:item title="Extra field 3"><%= @product.extra_field_3 %></:item>
+  <:item title="Extra field 4"><%= @product.extra_field_4 %></:item>
+  <:item title="Extra field 5"><%= @product.extra_field_5 %></:item>
+  <:item title="Extra field 6"><%= @product.extra_field_6 %></:item>
+  <:item title="Extra field 7"><%= @product.extra_field_7 %></:item>
+  <:item title="Extra field 8"><%= @product.extra_field_8 %></:item>
+  <:item title="Extra field 9"><%= @product.extra_field_9 %></:item>
+  <:item title="Extra field 10"><%= @product.extra_field_10 %></:item>
+  <:item title="Extra field 11"><%= @product.extra_field_11 %></:item>
+  <:item title="Extra field 12"><%= @product.extra_field_12 %></:item>
+  <:item title="Extra field 13"><%= @product.extra_field_13 %></:item>
+  <:item title="Feature list"><%= @product.feature_list %></:item>
+  <:item title="Plugin list"><%= @product.plugin_list %></:item>
+  <:item title="Sample enable"><%= @product.sample_enable %></:item>
+  <:item title="Sample name"><%= @product.sample_name %></:item>
+  <:item title="Sample skuprefix"><%= @product.sample_skuprefix %></:item>
+  <:item title="Sample price"><%= @product.sample_price %></:item>
+  <:item title="Sample weight"><%= @product.sample_weight %></:item>
+  <:item title="Review average"><%= @product.review_average %></:item>
+  <:item title="Review count"><%= @product.review_count %></:item>
+  <:item title="Main image file"><%= @product.main_image_file %></:item>
+  <:item title="Main image caption"><%= @product.main_image_caption %></:item>
+  <:item title="Thumbnail file"><%= @product.thumbnail_file %></:item>
+  <:item title="Media file"><%= @product.media_file %></:item>
+  <:item title="Additional image file 2"><%= @product.additional_image_file_2 %></:item>
+  <:item title="Additional image caption 2"><%= @product.additional_image_caption_2 %></:item>
+  <:item title="Additional image file 3"><%= @product.additional_image_file_3 %></:item>
+  <:item title="Additional image caption 3"><%= @product.additional_image_caption_3 %></:item>
+  <:item title="Additional image file 4"><%= @product.additional_image_file_4 %></:item>
+  <:item title="Additional image caption 4"><%= @product.additional_image_caption_4 %></:item>
+  <:item title="Image gallery list"><%= @product.image_gallery_list %></:item>
+  <:item title="Option set list"><%= @product.option_set_list %></:item>
+  <:item title="Advanced option list"><%= @product.advanced_option_list %></:item>
+  <:item title="Related product list"><%= @product.related_product_list %></:item>
+  <:item title="Up selling item list"><%= @product.up_selling_item_list %></:item>
+  <:item title="Discount list"><%= @product.discount_list %></:item>
+  <:item title="Do not use category options"><%= @product.do_not_use_category_options %></:item>
+  <:item title="Date created"><%= @product.date_created %></:item>
+  <:item title="Listing template"><%= @product.listing_template_id %></:item>
+  <:item title="Listing template name"><%= @product.listing_template_name %></:item>
+  <:item title="Login required option"><%= @product.login_required_option_id %></:item>
+  <:item title="Login required option name"><%= @product.login_required_option_name %></:item>
+  <:item title="Login required option redirect to"><%= @product.login_required_option_redirect_to %></:item>
+  <:item title="Allow access customer group"><%= @product.allow_access_customer_group_id %></:item>
+  <:item title="Allow access customer group name"><%= @product.allow_access_customer_group_name %></:item>
+  <:item title="Rmamax period"><%= @product.rmamax_period %></:item>
+  <:item title="Canonical url"><%= @product.canonical_url %></:item>
+  <:item title="Tax code"><%= @product.tax_code %></:item>
+  <:item title="Display text"><%= @product.display_text %></:item>
+  <:item title="Minimum quantity"><%= @product.minimum_quantity %></:item>
+  <:item title="Maximum quantity"><%= @product.maximum_quantity %></:item>
+  <:item title="Allow only multiples"><%= @product.allow_only_multiples %></:item>
+  <:item title="Allow fractional quantity"><%= @product.allow_fractional_quantity %></:item>
+  <:item title="Quantity options"><%= @product.quantity_options %></:item>
+  <:item title="Group options for quantity pricing"><%= @product.group_options_for_quantity_pricing %></:item>
+  <:item title="Apply quantity discount to options"><%= @product.apply_quantity_discount_to_options %></:item>
+  <:item title="Enable make an offer feature"><%= @product.enable_make_an_offer_feature %></:item>
+  <:item title="Minimum acceptable offer"><%= @product.minimum_acceptable_offer %></:item>
+  <:item title="Price level 1"><%= @product.price_level_1 %></:item>
+  <:item title="Price level 1 hide"><%= @product.price_level_1_hide %></:item>
+  <:item title="Price level 2"><%= @product.price_level_2 %></:item>
+  <:item title="Price level 2 hide"><%= @product.price_level_2_hide %></:item>
+  <:item title="Price level 3"><%= @product.price_level_3 %></:item>
+  <:item title="Price level 3 hide"><%= @product.price_level_3_hide %></:item>
+  <:item title="Price level 4"><%= @product.price_level_4 %></:item>
+  <:item title="Price level 4 hide"><%= @product.price_level_4_hide %></:item>
+  <:item title="Price level 5"><%= @product.price_level_5 %></:item>
+  <:item title="Price level 5 hide"><%= @product.price_level_5_hide %></:item>
+  <:item title="Price level 6"><%= @product.price_level_6 %></:item>
+  <:item title="Price level 6 hide"><%= @product.price_level_6_hide %></:item>
+  <:item title="Price level 7"><%= @product.price_level_7 %></:item>
+  <:item title="Price level 7 hide"><%= @product.price_level_7_hide %></:item>
+  <:item title="Price level 8"><%= @product.price_level_8 %></:item>
+  <:item title="Price level 8 hide"><%= @product.price_level_8_hide %></:item>
+  <:item title="Price level 9"><%= @product.price_level_9 %></:item>
+  <:item title="Price level 9 hide"><%= @product.price_level_9_hide %></:item>
+  <:item title="Price level 10"><%= @product.price_level_10 %></:item>
+  <:item title="Price level 10 hide"><%= @product.price_level_10_hide %></:item>
+  <:item title="Buy button link"><%= @product.buy_button_link %></:item>
+  <:item title="Product link"><%= @product.product_link %></:item>
+  <:item title="Title"><%= @product.title %></:item>
+  <:item title="Custom file name"><%= @product.custom_file_name %></:item>
+  <:item title="Redirect link"><%= @product.redirect_link %></:item>
+  <:item title="Meta tags"><%= @product.meta_tags %></:item>
+  <:item title="Special instructions"><%= @product.special_instructions %></:item>
+  <:item title="Assign key"><%= @product.assign_key %></:item>
+  <:item title="Re use keys"><%= @product.re_use_keys %></:item>
+  <:item title="Serial list"><%= @product.serial_list %></:item>
+  <:item title="Eproduct list"><%= @product.eproduct_list %></:item>
+</.list>
+
+<.back navigate={~p"/products"}>Back to products</.back>
+
+<.modal :if={@live_action == :edit} id="product-modal" show on_cancel={JS.patch(~p"/products/#{@product}")}>
+  <.live_component
+    module={ApiWeb.ProductLive.FormComponent}
+    id={@product.id}
+    title={@page_title}
+    action={@live_action}
+    product={@product}
+    patch={~p"/products/#{@product}"}
+  />
+</.modal>
