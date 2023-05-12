@@ -426,7 +426,7 @@ defmodule Api.Users do
   def find_or_create(auth) do
     case get_user_by_uid(auth.uid) do
       nil ->
-        user = register_user(auth)
+        user = oauth_register_user(auth)
         User.update_user(user, %{shift4shop_uid: auth.uid})
 
       reply ->
