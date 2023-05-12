@@ -6,6 +6,8 @@ defmodule ApiWeb.UserAuth do
 
   alias Api.Users
 
+  @pubsub_topic "user_updates"
+
   # Make the remember me cookie valid for 60 days.
   # If you want bump or reduce this value, also change
   # the token expiry itself in UserToken.
@@ -243,4 +245,6 @@ defmodule ApiWeb.UserAuth do
   defp maybe_store_return_to(conn), do: conn
 
   defp signed_in_path(_conn), do: ~p"/"
+
+  def pubsub_topic, do: @pubsub_topic
 end

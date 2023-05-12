@@ -1,7 +1,7 @@
 <.header>
   Listing Customer
   <:actions>
-    <.link patch={~p"/customer/new"}>
+    <.link patch={~p"/customers/new"}>
       <.button>New Customer</.button>
     </.link>
   </:actions>
@@ -10,7 +10,7 @@
 <.table
   id="customer"
   rows={@streams.customer_collection}
-  row_click={fn {_id, customer} -> JS.navigate(~p"/customer/#{customer}") end}
+  row_click={fn {_id, customer} -> JS.navigate(~p"/customers/#{customer}") end}
 >
   <:col :let={{_id, customer}} label="Customer"><%= customer.customer_id %></:col>
   <:col :let={{_id, customer}} label="Email"><%= customer.email %></:col>
@@ -50,9 +50,9 @@
   <:col :let={{_id, customer}} label="Reset password"><%= customer.reset_password %></:col>
   <:action :let={{_id, customer}}>
     <div class="sr-only">
-      <.link navigate={~p"/customer/#{customer}"}>Show</.link>
+      <.link navigate={~p"/customers/#{customer}"}>Show</.link>
     </div>
-    <.link patch={~p"/customer/#{customer}/edit"}>Edit</.link>
+    <.link patch={~p"/customers/#{customer}/edit"}>Edit</.link>
   </:action>
   <:action :let={{id, customer}}>
     <.link
@@ -64,13 +64,13 @@
   </:action>
 </.table>
 
-<.modal :if={@live_action in [:new, :edit]} id="customer-modal" show on_cancel={JS.patch(~p"/customer")}>
+<.modal :if={@live_action in [:new, :edit]} id="customer-modal" show on_cancel={JS.patch(~p"/customers")}>
   <.live_component
     module={ApiWeb.CustomerLive.FormComponent}
     id={@customer.id || :new}
     title={@page_title}
     action={@live_action}
     customer={@customer}
-    patch={~p"/customer"}
+    patch={~p"/customers"}
   />
 </.modal>
