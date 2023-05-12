@@ -27,7 +27,7 @@ defmodule ApiWeb.AuthController do
     IO.inspect(params)
 
     conn
-    |> redirect(to: "/")
+    |> redirect(to: {~p"/users/log_in"})
   end
 
   def callback(%{assigns: %{ueberauth_failure: error}} = conn, _params) do
@@ -35,7 +35,7 @@ defmodule ApiWeb.AuthController do
 
     conn
     |> put_flash(:error, "Failed to authenticate. #{error.message}")
-    |> redirect(to: "/")
+    |> redirect(to: {~p"/users/log_in"})
   end
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
@@ -49,7 +49,7 @@ defmodule ApiWeb.AuthController do
       {:error, reason} ->
         conn
         |> put_flash(:error, reason)
-        |> redirect(to: "/")
+        |> redirect(to: {~p"/users/log_in"})
     end
   end
 end
