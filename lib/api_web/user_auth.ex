@@ -37,12 +37,13 @@ defmodule ApiWeb.UserAuth do
     |> put_token_in_session(token)
     |> put_session(:current_user, current_user)
     |> maybe_write_remember_me_cookie(token, params)
+    |> maybe_add_shift4shop_token(current_user, params)
     |> redirect(to: user_return_to || signed_in_path(conn))
   end
 
   def last_login(user) do
     data = %{user | last_login: DateTime.utc_now()}
-    Users.update_user(data)
+    Users.User.update_user(data)
   end
 
   defp user_session(user) do
@@ -243,6 +244,17 @@ defmodule ApiWeb.UserAuth do
   end
 
   defp maybe_store_return_to(conn), do: conn
+
+
+  defp maybe_add_shift4shop_token(conn, user, %{github_token: token}) do
+    user = %{user | shift4shop_token: token}
+
+    Plug.Conn.put_session(conn, :current_user, user)
+  end
+
+  defp maybe_add_shift4shop_token(conn, _user, _params) do
+    conn
+  end
 
   defp signed_in_path(_conn), do: ~p"/"
 

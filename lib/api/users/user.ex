@@ -9,6 +9,8 @@ defmodule Api.Users.User do
     field :password, :string, virtual: true, redact: true
     field :hashed_password, :string, redact: true
     field :confirmed_at, :naive_datetime
+    field :shift4shop_uid, :string
+    field :shift4shop_token, :string, virtual: true
 
     timestamps()
   end
@@ -38,7 +40,7 @@ defmodule Api.Users.User do
   """
   def registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:email, :password])
+    |> cast(attrs, [:email, :password, :shift4shop_uid])
     |> validate_email(opts)
     |> validate_password(opts)
   end
