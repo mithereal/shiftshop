@@ -42,7 +42,7 @@ defmodule ApiWeb.AuthController do
   end
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
-    case Api.Users.find_or_create(auth) do
+    case Api.Users.find_or_create(auth) do  ## add user email etc end
       {:ok, user} ->
         conn =
           conn
