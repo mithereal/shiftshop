@@ -49,7 +49,7 @@ defmodule ApiWeb.Router do
     pipe_through :user
 
     live_session :require_authenticated_user,
-    layout: {ApiWeb.Layouts, :user},
+      layout: {ApiWeb.Layouts, :user},
       on_mount: [
         {ApiWeb.UserAuth, :ensure_authenticated},
         {ApiWeb.Path, :put_path_in_socket}
@@ -91,7 +91,6 @@ defmodule ApiWeb.Router do
 
     get "/:provider", ProviderSettingsController, :edit
   end
-
 
   scope "/users", ApiWeb do
     pipe_through([:browser, :redirect_if_user_is_authenticated])

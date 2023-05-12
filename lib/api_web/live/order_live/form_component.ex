@@ -50,13 +50,28 @@ defmodule ApiWeb.OrderLive.FormComponent do
         <.input field={@form[:order_item_list]} type="text" label="Order item list" />
         <.input field={@form[:promotion_list]} type="text" label="Promotion list" />
         <.input field={@form[:order_discount]} type="number" label="Order discount" step="any" />
-        <.input field={@form[:order_discount_coupon]} type="number" label="Order discount coupon" step="any" />
-        <.input field={@form[:order_discount_promotion]} type="number" label="Order discount promotion" step="any" />
+        <.input
+          field={@form[:order_discount_coupon]}
+          type="number"
+          label="Order discount coupon"
+          step="any"
+        />
+        <.input
+          field={@form[:order_discount_promotion]}
+          type="number"
+          label="Order discount promotion"
+          step="any"
+        />
         <.input field={@form[:sales_tax]} type="number" label="Sales tax" step="any" />
         <.input field={@form[:sales_tax_2]} type="number" label="Sales tax 2" step="any" />
         <.input field={@form[:sales_tax_3]} type="number" label="Sales tax 3" step="any" />
         <.input field={@form[:order_amount]} type="number" label="Order amount" step="any" />
-        <.input field={@form[:affiliate_commission]} type="number" label="Affiliate commission" step="any" />
+        <.input
+          field={@form[:affiliate_commission]}
+          type="number"
+          label="Affiliate commission"
+          step="any"
+        />
         <.input field={@form[:transaction_list]} type="number" label="Transaction list" step="any" />
         <.input field={@form[:card_type]} type="text" label="Card type" />
         <.input field={@form[:card_number]} type="text" label="Card number" />

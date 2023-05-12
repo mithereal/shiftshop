@@ -12,7 +12,9 @@
   rows={@streams.orders}
   row_click={fn {_id, order} -> JS.navigate(~p"/orders/#{order}") end}
 >
-  <:col :let={{_id, order}} label="Invoice number prefix"><%= order.invoice_number_prefix %></:col>
+  <:col :let={{_id, order}} label="Invoice number prefix">
+    <%= order.invoice_number_prefix %>
+  </:col>
   <:col :let={{_id, order}} label="Invoice number"><%= order.invoice_number %></:col>
   <:col :let={{_id, order}} label="Order"><%= order.order_id %></:col>
   <:col :let={{_id, order}} label="Customer"><%= order.customer_id %></:col>
@@ -36,15 +38,25 @@
   <:col :let={{_id, order}} label="Billing country"><%= order.billing_country %></:col>
   <:col :let={{_id, order}} label="Billing phone number"><%= order.billing_phone_number %></:col>
   <:col :let={{_id, order}} label="Billing email"><%= order.billing_email %></:col>
-  <:col :let={{_id, order}} label="Billing payment method"><%= order.billing_payment_method %></:col>
-  <:col :let={{_id, order}} label="Billing on line payment"><%= order.billing_on_line_payment %></:col>
-  <:col :let={{_id, order}} label="Billing payment method"><%= order.billing_payment_method_id %></:col>
+  <:col :let={{_id, order}} label="Billing payment method">
+    <%= order.billing_payment_method %>
+  </:col>
+  <:col :let={{_id, order}} label="Billing on line payment">
+    <%= order.billing_on_line_payment %>
+  </:col>
+  <:col :let={{_id, order}} label="Billing payment method">
+    <%= order.billing_payment_method_id %>
+  </:col>
   <:col :let={{_id, order}} label="Shipment list"><%= order.shipment_list %></:col>
   <:col :let={{_id, order}} label="Order item list"><%= order.order_item_list %></:col>
   <:col :let={{_id, order}} label="Promotion list"><%= order.promotion_list %></:col>
   <:col :let={{_id, order}} label="Order discount"><%= order.order_discount %></:col>
-  <:col :let={{_id, order}} label="Order discount coupon"><%= order.order_discount_coupon %></:col>
-  <:col :let={{_id, order}} label="Order discount promotion"><%= order.order_discount_promotion %></:col>
+  <:col :let={{_id, order}} label="Order discount coupon">
+    <%= order.order_discount_coupon %>
+  </:col>
+  <:col :let={{_id, order}} label="Order discount promotion">
+    <%= order.order_discount_promotion %>
+  </:col>
   <:col :let={{_id, order}} label="Sales tax"><%= order.sales_tax %></:col>
   <:col :let={{_id, order}} label="Sales tax 2"><%= order.sales_tax_2 %></:col>
   <:col :let={{_id, order}} label="Sales tax 3"><%= order.sales_tax_3 %></:col>
@@ -54,7 +66,9 @@
   <:col :let={{_id, order}} label="Card type"><%= order.card_type %></:col>
   <:col :let={{_id, order}} label="Card number"><%= order.card_number %></:col>
   <:col :let={{_id, order}} label="Card name"><%= order.card_name %></:col>
-  <:col :let={{_id, order}} label="Card expiration month"><%= order.card_expiration_month %></:col>
+  <:col :let={{_id, order}} label="Card expiration month">
+    <%= order.card_expiration_month %>
+  </:col>
   <:col :let={{_id, order}} label="Card expiration year"><%= order.card_expiration_year %></:col>
   <:col :let={{_id, order}} label="Card issue number"><%= order.card_issue_number %></:col>
   <:col :let={{_id, order}} label="Card start month"><%= order.card_start_month %></:col>
@@ -84,7 +98,12 @@
   </:action>
 </.table>
 
-<.modal :if={@live_action in [:new, :edit]} id="order-modal" show on_cancel={JS.patch(~p"/orders")}>
+<.modal
+  :if={@live_action in [:new, :edit]}
+  id="order-modal"
+  show
+  on_cancel={JS.patch(~p"/orders")}
+>
   <.live_component
     module={ApiWeb.OrderLive.FormComponent}
     id={@order.id || :new}

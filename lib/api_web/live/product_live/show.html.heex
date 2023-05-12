@@ -95,9 +95,15 @@
   <:item title="Listing template name"><%= @product.listing_template_name %></:item>
   <:item title="Login required option"><%= @product.login_required_option_id %></:item>
   <:item title="Login required option name"><%= @product.login_required_option_name %></:item>
-  <:item title="Login required option redirect to"><%= @product.login_required_option_redirect_to %></:item>
-  <:item title="Allow access customer group"><%= @product.allow_access_customer_group_id %></:item>
-  <:item title="Allow access customer group name"><%= @product.allow_access_customer_group_name %></:item>
+  <:item title="Login required option redirect to">
+    <%= @product.login_required_option_redirect_to %>
+  </:item>
+  <:item title="Allow access customer group">
+    <%= @product.allow_access_customer_group_id %>
+  </:item>
+  <:item title="Allow access customer group name">
+    <%= @product.allow_access_customer_group_name %>
+  </:item>
   <:item title="Rmamax period"><%= @product.rmamax_period %></:item>
   <:item title="Canonical url"><%= @product.canonical_url %></:item>
   <:item title="Tax code"><%= @product.tax_code %></:item>
@@ -107,8 +113,12 @@
   <:item title="Allow only multiples"><%= @product.allow_only_multiples %></:item>
   <:item title="Allow fractional quantity"><%= @product.allow_fractional_quantity %></:item>
   <:item title="Quantity options"><%= @product.quantity_options %></:item>
-  <:item title="Group options for quantity pricing"><%= @product.group_options_for_quantity_pricing %></:item>
-  <:item title="Apply quantity discount to options"><%= @product.apply_quantity_discount_to_options %></:item>
+  <:item title="Group options for quantity pricing">
+    <%= @product.group_options_for_quantity_pricing %>
+  </:item>
+  <:item title="Apply quantity discount to options">
+    <%= @product.apply_quantity_discount_to_options %>
+  </:item>
   <:item title="Enable make an offer feature"><%= @product.enable_make_an_offer_feature %></:item>
   <:item title="Minimum acceptable offer"><%= @product.minimum_acceptable_offer %></:item>
   <:item title="Price level 1"><%= @product.price_level_1 %></:item>
@@ -146,7 +156,12 @@
 
 <.back navigate={~p"/products"}>Back to products</.back>
 
-<.modal :if={@live_action == :edit} id="product-modal" show on_cancel={JS.patch(~p"/products/#{@product}")}>
+<.modal
+  :if={@live_action == :edit}
+  id="product-modal"
+  show
+  on_cancel={JS.patch(~p"/products/#{@product}")}
+>
   <.live_component
     module={ApiWeb.ProductLive.FormComponent}
     id={@product.id}

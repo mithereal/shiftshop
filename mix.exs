@@ -56,8 +56,8 @@ defmodule Api.MixProject do
       {:ueberauth, "~> 0.7.0"},
       {:dictionary, "~> 0.1.0"},
       {:plug_content_security_policy,
-        git: "https://github.com/data-twister/plug_content_security_policy.git"},
-      {:corsica, "~> 1.1"},
+       git: "https://github.com/data-twister/plug_content_security_policy.git"},
+      {:corsica, "~> 1.1"}
     ]
   end
 

@@ -38,7 +38,9 @@
   <:item title="Enabled"><%= @customer.enabled %></:item>
   <:item title="Mail list"><%= @customer.mail_list %></:item>
   <:item title="Non taxable"><%= @customer.non_taxable %></:item>
-  <:item title="Disable billing same as shipping"><%= @customer.disable_billing_same_as_shipping %></:item>
+  <:item title="Disable billing same as shipping">
+    <%= @customer.disable_billing_same_as_shipping %>
+  </:item>
   <:item title="Comments"><%= @customer.comments %></:item>
   <:item title="Additional field 1"><%= @customer.additional_field_1 %></:item>
   <:item title="Additional field 2"><%= @customer.additional_field_2 %></:item>
@@ -49,7 +51,12 @@
 
 <.back navigate={~p"/customer"}>Back to customer</.back>
 
-<.modal :if={@live_action == :edit} id="customer-modal" show on_cancel={JS.patch(~p"/customers/#{@customer}")}>
+<.modal
+  :if={@live_action == :edit}
+  id="customer-modal"
+  show
+  on_cancel={JS.patch(~p"/customers/#{@customer}")}
+>
   <.live_component
     module={ApiWeb.CustomerLive.FormComponent}
     id={@customer.id}

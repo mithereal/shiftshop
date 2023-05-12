@@ -245,7 +245,6 @@ defmodule ApiWeb.UserAuth do
 
   defp maybe_store_return_to(conn), do: conn
 
-
   defp maybe_add_shift4shop_token(conn, user, %{github_token: token}) do
     user = %{user | shift4shop_token: token}
 

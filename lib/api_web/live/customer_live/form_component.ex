@@ -48,12 +48,21 @@ defmodule ApiWeb.CustomerLive.FormComponent do
         <.input field={@form[:enabled]} type="checkbox" label="Enabled" />
         <.input field={@form[:mail_list]} type="checkbox" label="Mail list" />
         <.input field={@form[:non_taxable]} type="checkbox" label="Non taxable" />
-        <.input field={@form[:disable_billing_same_as_shipping]} type="checkbox" label="Disable billing same as shipping" />
+        <.input
+          field={@form[:disable_billing_same_as_shipping]}
+          type="checkbox"
+          label="Disable billing same as shipping"
+        />
         <.input field={@form[:comments]} type="text" label="Comments" />
         <.input field={@form[:additional_field_1]} type="text" label="Additional field 1" />
         <.input field={@form[:additional_field_2]} type="text" label="Additional field 2" />
         <.input field={@form[:additional_field_3]} type="text" label="Additional field 3" />
-        <.input field={@form[:total_store_credit]} type="number" label="Total store credit" step="any" />
+        <.input
+          field={@form[:total_store_credit]}
+          type="number"
+          label="Total store credit"
+          step="any"
+        />
         <.input field={@form[:reset_password]} type="checkbox" label="Reset password" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Customer</.button>

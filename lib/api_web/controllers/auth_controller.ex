@@ -13,8 +13,18 @@ defmodule ApiWeb.AuthController do
 
   require Logger
 
-  def request(conn, _params) do
-    render(conn, :request, callback_url: Helpers.callback_url(conn), layout: false)
+  def request(conn, params \\ nil) do
+    case params do
+      nil ->
+        render(conn, :request, callback_url: Helpers.callback_url(conn), layout: false)
+
+      params ->
+        render(conn, :request,
+          callback_url: Helpers.callback_url(conn),
+          layout: false,
+          form: params
+        )
+    end
   end
 
   def delete(conn, _params) do

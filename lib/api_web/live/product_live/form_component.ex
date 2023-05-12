@@ -30,7 +30,11 @@ defmodule ApiWeb.ProductLive.FormComponent do
         <.input field={@form[:gtin]} type="text" label="Gtin" />
         <.input field={@form[:category_list]} type="text" label="Category list" />
         <.input field={@form[:external_ids_list]} type="text" label="External ids list" />
-        <.input field={@form[:category_external_ids_list]} type="text" label="Category external ids list" />
+        <.input
+          field={@form[:category_external_ids_list]}
+          type="text"
+          label="Category external ids list"
+        />
         <.input field={@form[:non_taxable]} type="text" label="Non taxable" />
         <.input field={@form[:not_for_sale]} type="text" label="Not for sale" />
         <.input field={@form[:hide]} type="text" label="Hide" />
@@ -88,59 +92,163 @@ defmodule ApiWeb.ProductLive.FormComponent do
         <.input field={@form[:thumbnail_file]} type="text" label="Thumbnail file" />
         <.input field={@form[:media_file]} type="text" label="Media file" />
         <.input field={@form[:additional_image_file_2]} type="text" label="Additional image file 2" />
-        <.input field={@form[:additional_image_caption_2]} type="text" label="Additional image caption 2" />
+        <.input
+          field={@form[:additional_image_caption_2]}
+          type="text"
+          label="Additional image caption 2"
+        />
         <.input field={@form[:additional_image_file_3]} type="text" label="Additional image file 3" />
-        <.input field={@form[:additional_image_caption_3]} type="text" label="Additional image caption 3" />
+        <.input
+          field={@form[:additional_image_caption_3]}
+          type="text"
+          label="Additional image caption 3"
+        />
         <.input field={@form[:additional_image_file_4]} type="text" label="Additional image file 4" />
-        <.input field={@form[:additional_image_caption_4]} type="text" label="Additional image caption 4" />
+        <.input
+          field={@form[:additional_image_caption_4]}
+          type="text"
+          label="Additional image caption 4"
+        />
         <.input field={@form[:image_gallery_list]} type="text" label="Image gallery list" />
         <.input field={@form[:option_set_list]} type="text" label="Option set list" />
         <.input field={@form[:advanced_option_list]} type="text" label="Advanced option list" />
         <.input field={@form[:related_product_list]} type="text" label="Related product list" />
         <.input field={@form[:up_selling_item_list]} type="text" label="Up selling item list" />
         <.input field={@form[:discount_list]} type="text" label="Discount list" />
-        <.input field={@form[:do_not_use_category_options]} type="text" label="Do not use category options" />
+        <.input
+          field={@form[:do_not_use_category_options]}
+          type="text"
+          label="Do not use category options"
+        />
         <.input field={@form[:date_created]} type="text" label="Date created" />
         <.input field={@form[:listing_template_id]} type="number" label="Listing template" />
         <.input field={@form[:listing_template_name]} type="text" label="Listing template name" />
         <.input field={@form[:login_required_option_id]} type="number" label="Login required option" />
-        <.input field={@form[:login_required_option_name]} type="text" label="Login required option name" />
-        <.input field={@form[:login_required_option_redirect_to]} type="text" label="Login required option redirect to" />
-        <.input field={@form[:allow_access_customer_group_id]} type="number" label="Allow access customer group" />
-        <.input field={@form[:allow_access_customer_group_name]} type="text" label="Allow access customer group name" />
+        <.input
+          field={@form[:login_required_option_name]}
+          type="text"
+          label="Login required option name"
+        />
+        <.input
+          field={@form[:login_required_option_redirect_to]}
+          type="text"
+          label="Login required option redirect to"
+        />
+        <.input
+          field={@form[:allow_access_customer_group_id]}
+          type="number"
+          label="Allow access customer group"
+        />
+        <.input
+          field={@form[:allow_access_customer_group_name]}
+          type="text"
+          label="Allow access customer group name"
+        />
         <.input field={@form[:rmamax_period]} type="text" label="Rmamax period" />
         <.input field={@form[:canonical_url]} type="text" label="Canonical url" />
         <.input field={@form[:tax_code]} type="text" label="Tax code" />
         <.input field={@form[:display_text]} type="text" label="Display text" />
         <.input field={@form[:minimum_quantity]} type="number" label="Minimum quantity" step="any" />
         <.input field={@form[:maximum_quantity]} type="number" label="Maximum quantity" step="any" />
-        <.input field={@form[:allow_only_multiples]} type="number" label="Allow only multiples" step="any" />
-        <.input field={@form[:allow_fractional_quantity]} type="number" label="Allow fractional quantity" step="any" />
+        <.input
+          field={@form[:allow_only_multiples]}
+          type="number"
+          label="Allow only multiples"
+          step="any"
+        />
+        <.input
+          field={@form[:allow_fractional_quantity]}
+          type="number"
+          label="Allow fractional quantity"
+          step="any"
+        />
         <.input field={@form[:quantity_options]} type="text" label="Quantity options" />
-        <.input field={@form[:group_options_for_quantity_pricing]} type="text" label="Group options for quantity pricing" />
-        <.input field={@form[:apply_quantity_discount_to_options]} type="text" label="Apply quantity discount to options" />
-        <.input field={@form[:enable_make_an_offer_feature]} type="text" label="Enable make an offer feature" />
+        <.input
+          field={@form[:group_options_for_quantity_pricing]}
+          type="text"
+          label="Group options for quantity pricing"
+        />
+        <.input
+          field={@form[:apply_quantity_discount_to_options]}
+          type="text"
+          label="Apply quantity discount to options"
+        />
+        <.input
+          field={@form[:enable_make_an_offer_feature]}
+          type="text"
+          label="Enable make an offer feature"
+        />
         <.input field={@form[:minimum_acceptable_offer]} type="text" label="Minimum acceptable offer" />
         <.input field={@form[:price_level_1]} type="number" label="Price level 1" step="any" />
-        <.input field={@form[:price_level_1_hide]} type="number" label="Price level 1 hide" step="any" />
+        <.input
+          field={@form[:price_level_1_hide]}
+          type="number"
+          label="Price level 1 hide"
+          step="any"
+        />
         <.input field={@form[:price_level_2]} type="number" label="Price level 2" step="any" />
-        <.input field={@form[:price_level_2_hide]} type="number" label="Price level 2 hide" step="any" />
+        <.input
+          field={@form[:price_level_2_hide]}
+          type="number"
+          label="Price level 2 hide"
+          step="any"
+        />
         <.input field={@form[:price_level_3]} type="number" label="Price level 3" step="any" />
-        <.input field={@form[:price_level_3_hide]} type="number" label="Price level 3 hide" step="any" />
+        <.input
+          field={@form[:price_level_3_hide]}
+          type="number"
+          label="Price level 3 hide"
+          step="any"
+        />
         <.input field={@form[:price_level_4]} type="number" label="Price level 4" step="any" />
-        <.input field={@form[:price_level_4_hide]} type="number" label="Price level 4 hide" step="any" />
+        <.input
+          field={@form[:price_level_4_hide]}
+          type="number"
+          label="Price level 4 hide"
+          step="any"
+        />
         <.input field={@form[:price_level_5]} type="number" label="Price level 5" step="any" />
-        <.input field={@form[:price_level_5_hide]} type="number" label="Price level 5 hide" step="any" />
+        <.input
+          field={@form[:price_level_5_hide]}
+          type="number"
+          label="Price level 5 hide"
+          step="any"
+        />
         <.input field={@form[:price_level_6]} type="number" label="Price level 6" step="any" />
-        <.input field={@form[:price_level_6_hide]} type="number" label="Price level 6 hide" step="any" />
+        <.input
+          field={@form[:price_level_6_hide]}
+          type="number"
+          label="Price level 6 hide"
+          step="any"
+        />
         <.input field={@form[:price_level_7]} type="number" label="Price level 7" step="any" />
-        <.input field={@form[:price_level_7_hide]} type="number" label="Price level 7 hide" step="any" />
+        <.input
+          field={@form[:price_level_7_hide]}
+          type="number"
+          label="Price level 7 hide"
+          step="any"
+        />
         <.input field={@form[:price_level_8]} type="number" label="Price level 8" step="any" />
-        <.input field={@form[:price_level_8_hide]} type="number" label="Price level 8 hide" step="any" />
+        <.input
+          field={@form[:price_level_8_hide]}
+          type="number"
+          label="Price level 8 hide"
+          step="any"
+        />
         <.input field={@form[:price_level_9]} type="number" label="Price level 9" step="any" />
-        <.input field={@form[:price_level_9_hide]} type="number" label="Price level 9 hide" step="any" />
+        <.input
+          field={@form[:price_level_9_hide]}
+          type="number"
+          label="Price level 9 hide"
+          step="any"
+        />
         <.input field={@form[:price_level_10]} type="number" label="Price level 10" step="any" />
-        <.input field={@form[:price_level_10_hide]} type="number" label="Price level 10 hide" step="any" />
+        <.input
+          field={@form[:price_level_10_hide]}
+          type="number"
+          label="Price level 10 hide"
+          step="any"
+        />
         <.input field={@form[:buy_button_link]} type="text" label="Buy button link" />
         <.input field={@form[:product_link]} type="text" label="Product link" />
         <.input field={@form[:title]} type="text" label="Title" />
