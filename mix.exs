@@ -51,7 +51,7 @@ defmodule Api.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:ueberauth_shift4shop, git: "https://github.com/mithereal/ueberauth_shift4shop.git"},
+      {:ueberauth_shift4shop, git: "https://github.com/mithereal/ueberauth_shift4shop.git", ref: "f9fdb808edafa03f7e9ffdf739277cc5538892e2"},
       {:shift4shop, git: "https://github.com/mithereal/ex_shift4shop.git"},
       {:ueberauth, "~> 0.7.0"},
       {:dictionary, "~> 0.1.0"},
