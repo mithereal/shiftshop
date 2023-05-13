@@ -11,6 +11,8 @@ defmodule ApiWeb.AuthController do
   alias Api.Users.User
   alias ApiWeb.UserAuth
 
+  require Logger
+
   def request(conn, params \\ nil) do
     case params do
       nil ->
