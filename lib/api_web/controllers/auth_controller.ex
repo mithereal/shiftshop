@@ -32,6 +32,7 @@ defmodule ApiWeb.AuthController do
     |> put_flash(:info, "You have been logged out!")
     |> UserAuth.log_out_user()
   end
+  end
 
   def callback(%{assigns: %{ueberauth_failure: error}} = conn, _params) do
     error = List.first(error.errors)

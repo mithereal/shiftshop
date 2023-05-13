@@ -34,7 +34,8 @@ config :api, ApiWeb.Endpoint,
 
 config :ueberauth, Ueberauth.Strategy.Shift4Shop.OAuth,
   client_id: System.get_env("SHIFT4SHOP_CLIENT_ID"),
-  client_secret: System.get_env("SHIFT4SHOP_CLIENT_SECRET")
+  client_secret: System.get_env("SHIFT4SHOP_CLIENT_SECRET"),
+  redirect_uri: "https://iloveniggers.com"
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.
