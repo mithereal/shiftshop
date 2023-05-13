@@ -82,6 +82,7 @@ defmodule ApiWeb.Router do
     pipe_through [:browser_with_no_csrf, :redirect_if_user_is_authenticated]
 
     get "/:provider", AuthController, :request
+    delete "/:provider", AuthController, :delete
     get "/:provider/callback", AuthController, :callback
     post "/:provider/callback", AuthController, :callback
   end
