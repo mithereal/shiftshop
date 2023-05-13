@@ -86,8 +86,7 @@ if config_env() == :prod do
 
     config :ueberauth, Ueberauth.Strategy.Shift4Shop.OAuth,
       client_id: shift4shop_client_id,
-      client_secret: shift4shop_client_secret,
-      redirect_uri: "https://devportal.3dcart.com/oauth.asp"
+      client_secret: shift4shop_client_secret
   end
 
   # ## SSL Support
