@@ -37,6 +37,7 @@ defmodule ApiWeb.AuthController do
 
   def callback( conn, params) do
    IO.inspect(conn.assigns, label: "assogns")
+   conn
     end
 
   def callback(%{assigns: %{ueberauth_failure: error}} = conn, _params) do
