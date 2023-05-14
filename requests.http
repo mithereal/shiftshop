@@ -1,17 +1,13 @@
+### @host
 GET http://{{host}}
 
-###
-
-# @no-redirect
+### @auth_url
 GET http://{{host}}/auth/shift4shop/
 
-###
-
-
+### @callback
 GET http://{{host}}/auth/shift4shop/callback
 
-###
-
+### @callback
 POST http://{{host}}/auth/shift4shop/callback
 Content-Type: application/json
 
@@ -19,7 +15,7 @@ Content-Type: application/json
   "code":"12121212121212121212121212121212"
 }
 
-###
+### @token
 POST http://{{host}}/auth/shift4shop/callback/token
 Content-Type: application/json
 
