@@ -34,6 +34,7 @@ defmodule ApiWeb.Router do
   end
 
   pipeline :ueberauth do
+    plug :accepts, ["html", "json"]
     plug(:fetch_session)
     plug(:fetch_live_flash)
     plug(:put_root_layout, {ApiWeb.LayoutView, :root})
