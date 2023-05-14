@@ -29,7 +29,7 @@ defmodule ApiWeb.Router do
   pipeline :test do
     plug :accepts, ["html", "json"]
     plug(:fetch_session)
-    plug(:fetch_live_flash)
+    plug(:fetch_flash)
     plug(:fetch_current_user)
   end
 

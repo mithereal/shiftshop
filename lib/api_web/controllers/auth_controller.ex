@@ -32,7 +32,7 @@ defmodule ApiWeb.AuthController do
   end
 
   def token(conn, params) do
-    render(conn, :token, params: params, layout: false)
+    json(conn, params)
   end
 
   def callback(%{assigns: %{ueberauth_failure: error}} = conn, _params) do
