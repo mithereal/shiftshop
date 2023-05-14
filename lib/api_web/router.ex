@@ -4,9 +4,9 @@ defmodule ApiWeb.Router do
 
   pipeline :browser do
     plug :accepts, ["html"]
+    plug :put_root_layout, {ApiWeb.Layouts, :root}
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {ApiWeb.Layouts, :root}
     plug :protect_from_forgery
     plug :put_secure_browser_headers
     plug(:fetch_current_user)
@@ -14,16 +14,24 @@ defmodule ApiWeb.Router do
 
   pipeline :user do
     plug :accepts, ["html"]
+    plug :put_root_layout, {ApiWeb.Layouts, :user}
     plug :fetch_session
     plug :fetch_live_flash
-    plug :put_root_layout, {ApiWeb.Layouts, :user}
+    plug(:fetch_current_user)
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-    plug(:fetch_current_user)
   end
 
   pipeline :api do
     plug :accepts, ["json"]
+  end
+
+  pipeline :test do
+    plug :accepts, ["html", "json"]
+    plug(:put_root_layout, {ApiWeb.Layouts, :root})
+    plug(:fetch_session)
+    plug(:fetch_live_flash)
+    plug(:fetch_current_user)
   end
 
   pipeline :auth do
@@ -32,9 +40,9 @@ defmodule ApiWeb.Router do
 
   pipeline :browser_with_no_csrf do
     plug :accepts, ["html"]
+    plug(:put_root_layout, {ApiWeb.Layouts, :root})
     plug(:fetch_session)
     plug(:fetch_live_flash)
-    plug(:put_root_layout, {ApiWeb.Layouts, :root})
     plug(:fetch_current_user)
     plug(ApiWeb.AllowCrossOriginIframe)
   end
@@ -86,6 +94,13 @@ defmodule ApiWeb.Router do
     get "/:provider/callback", AuthController, :callback
     post "/:provider/callback", AuthController, :callback
   end
+
+  scope "/auth", ApiWeb do
+    pipe_through [:test]
+
+    post "/:provider/callback/token", AuthController, :token
+  end
+
 
   scope "/settings", ApiWeb do
     pipe_through [:browser, :browser_with_no_csrf]

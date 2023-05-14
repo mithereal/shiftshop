@@ -31,6 +31,9 @@ defmodule ApiWeb.AuthController do
     |> UserAuth.log_out_user()
   end
 
+  def token(conn, params) do
+    render(conn, :token, params: params, layout: false)
+  end
 
   def callback(%{assigns: %{ueberauth_failure: error}} = conn, _params) do
     error = List.first(error.errors)

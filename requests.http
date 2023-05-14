@@ -20,6 +20,9 @@ Content-Type: application/json
 }
 
 ###
+POST http://{{host}}/auth/shift4shop/callback/token
+Content-Type: application/json
+
 {
   "PublicKey":"12121212121212121212121212121212",
   "TimeStamp":"MM-DD-YYYY HH:MM:SS",
