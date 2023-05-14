@@ -34,9 +34,10 @@ defmodule ApiWeb.Router do
   end
 
   pipeline :ueberauth do
-    plug :accepts, ["html"]
-    plug :fetch_session
-    plug :fetch_flash
+    plug(:fetch_session)
+    plug(:fetch_live_flash)
+    plug(:put_root_layout, {ApiWeb.LayoutView, :root})
+    plug(:fetch_current_user)
   end
 
   pipeline :browser_with_no_csrf do

@@ -64,8 +64,15 @@ config :logger, :console,
 
 config :ueberauth, Ueberauth,
   providers: [
-    shift4shop: {Ueberauth.Strategy.Shift4Shop, []}
+    shift4shop: {Ueberauth.Strategy.Shift4Shop, []},
+    github:
+      {Ueberauth.Strategy.Github,
+      [default_scope: "user:email, repo", allow_private_emails: true, send_redirect_uri: false]}
   ]
+
+config :ueberauth, Ueberauth.Strategy.Github.OAuth,
+       client_id: "",
+       client_secret: ""
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason

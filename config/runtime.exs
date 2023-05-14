@@ -88,6 +88,7 @@ if config_env() == :prod do
            json_library: Jason
 
     config :oauth2_shift4shop, :credentials,
+           ignores_csrf_attack: true,
            client_id: System.get_env("SHIFT4SHOP_CLIENT_ID"),
            client_secret: System.get_env("SHIFT4SHOP_CLIENT_SECRET")
   end
