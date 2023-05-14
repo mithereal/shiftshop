@@ -14,6 +14,46 @@ Accept-Encoding: br,deflate,gzip,x-gzip
   "SecureURL":"https://merchant-store.3dcartstores.com"
 }
 
+<> 2023-05-14T052754.200.html
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback/token
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-14T052702.200.html
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback/token
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
 <> 2023-05-14T052110.200.html
 
 ###
@@ -810,36 +850,6 @@ Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd
 Accept-Encoding: br,deflate,gzip,x-gzip
 
 <> 2023-05-13T215845.500.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-<> 2023-05-13T215840.400.markdown
-
-###
-
-GET http://localhost:4000/auth/shift4shop/callback
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-05-13T215836.500.markdown
 
 ###
 
