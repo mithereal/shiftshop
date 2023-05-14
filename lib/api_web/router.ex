@@ -34,11 +34,12 @@ defmodule ApiWeb.Router do
   end
 
   pipeline :ueberauth do
-    plug :accepts, ["html", "json"]
+    plug :accepts, ["html"]
+    plug :fetch_current_user
     plug :fetch_session
     plug :fetch_flash
-    plug :fetch_current_user
-    plug Ueberauth
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
   end
 
   pipeline :browser_with_no_csrf do
