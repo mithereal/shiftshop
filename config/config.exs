@@ -7,6 +7,12 @@
 # General application configuration
 import Config
 
+config :api, :generators,
+  context_app: :api,
+  migration: true,
+  binary_id: true,
+  sample_binary_id: "11111111-1111-1111-1111-111111111111"
+
 config :api,
   ecto_repos: [Api.Repo]
 
@@ -63,6 +69,7 @@ config :ueberauth, Ueberauth,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
+config :ex_oauth2_shift4shop, :json_library, Jason
 
 config :plug_content_security_policy,
   nonces_for: [],
