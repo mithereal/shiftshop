@@ -5,6 +5,8 @@ defmodule ApiWeb.AuthController do
 
   use ApiWeb, :controller
 
+  plug Ueberauth
+
   alias Ueberauth.Strategy.Helpers
   alias Api.Users.User
   alias ApiWeb.UserAuth
