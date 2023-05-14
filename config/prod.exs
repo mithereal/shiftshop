@@ -15,7 +15,7 @@ config :api, ApiWeb.Endpoint, cache_static_manifest: "priv/static/cache_manifest
 config :swoosh, api_client: Swoosh.ApiClient.Finch, finch_name: Api.Finch
 
 # Do not print debug messages in production
-config :logger, level: :debud
+config :logger, level: :debug
 
 
 hostname = System.get_env("PHOENIX_HOSTNAME") || "localhost"
