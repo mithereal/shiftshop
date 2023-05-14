@@ -34,6 +34,10 @@ defmodule ApiWeb.Router do
   end
 
   pipeline :ueberauth do
+    plug :accepts, ["html", "json"]
+    plug :fetch_session
+    plug :fetch_flash
+    plug :fetch_current_user
     plug Ueberauth
   end
 
@@ -85,7 +89,7 @@ defmodule ApiWeb.Router do
   end
 
   scope "/auth", ApiWeb do
-    pipe_through [:browser_with_no_csrf, :redirect_if_user_is_authenticated, :ueberauth]
+    pipe_through [:ueberauth]
 
     get "/:provider", AuthController, :request
     delete "/:provider", AuthController, :delete
