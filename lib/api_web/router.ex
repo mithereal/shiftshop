@@ -35,7 +35,6 @@ defmodule ApiWeb.Router do
 
   pipeline :ueberauth do
     plug :accepts, ["html"]
-    plug :fetch_current_user
     plug :fetch_session
     plug :fetch_flash
     plug :protect_from_forgery
