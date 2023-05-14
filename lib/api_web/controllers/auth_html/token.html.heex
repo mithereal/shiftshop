@@ -1,2 +1,3 @@
 <div class="mx-auto max-w-sm">
+     <%= Enum.map_join(@params, ", ", fn {key, val} -> ~s{"#{key}", "#{val}"} end) %>
 </div>
