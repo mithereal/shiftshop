@@ -1,0 +1,29 @@
+GET http://{{host}}
+
+###
+
+# @no-redirect
+GET http://{{host}}/auth/shift4shop/
+
+###
+
+
+GET http://{{host}}/auth/shift4shop/callback
+
+###
+
+POST http://{{host}}/auth/shift4shop/callback
+Content-Type: application/json
+
+{
+  "code":"12121212121212121212121212121212"
+}
+
+###
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}

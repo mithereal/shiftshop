@@ -32,10 +32,12 @@ config :api, ApiWeb.Endpoint,
     hsts: false
   ]
 
-config :ueberauth, Ueberauth.Strategy.Shift4Shop.OAuth,
-  client_id: System.get_env("SHIFT4SHOP_CLIENT_ID"),
-  client_secret: System.get_env("SHIFT4SHOP_CLIENT_SECRET"),
-  redirect_uri: "https://iloveniggers.com"
+config :oauth2_shift4shop,
+       json_library: Jason
+
+config :oauth2_shift4shop, :credentials,
+       client_id: System.get_env("SHIFT4SHOP_CLIENT_ID"),
+       client_secret: System.get_env("SHIFT4SHOP_CLIENT_SECRET")
 
 # Runtime production configuration, including reading
 # of environment variables, is done on config/runtime.exs.

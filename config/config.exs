@@ -69,7 +69,8 @@ config :ueberauth, Ueberauth,
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
-config :ex_oauth2_shift4shop, :json_library, Jason
+config :oauth2_shift4shop,
+       :json_library, Jason
 
 config :plug_content_security_policy,
   nonces_for: [],

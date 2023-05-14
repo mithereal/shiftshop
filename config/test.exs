@@ -23,6 +23,10 @@ config :api, ApiWeb.Endpoint,
   secret_key_base: "sJp9JPd/yUa7RAKDEzPVOKGvchgBjmTnuUO7oyTncOR10ujc+7UObyS5c0kGzJR2",
   server: false
 
+config :ueberauth, Ueberauth.Strategy.Shift4Shop,
+       client_id: System.get_env("SHIFT4SHOP_CLIENT_ID"),
+       client_secret: System.get_env("SHIFT4SHOP_CLIENT_SECRET")
+
 # In test we don't send emails.
 config :api, Api.Mailer, adapter: Swoosh.Adapters.Test
 

@@ -19,7 +19,7 @@ defmodule Api.MixProject do
   def application do
     [
       mod: {Api.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :ueberauth]
     ]
   end
 
@@ -51,7 +51,7 @@ defmodule Api.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:ueberauth_shift4shop, git: "https://github.com/mithereal/ueberauth_shift4shop.git"},
+      {:oauth2_shift4shop, git: "https://github.com/mithereal/ex_oauth2_shift4shop.git"},
       {:shift4shop, git: "https://github.com/mithereal/ex_shift4shop.git"},
       {:ueberauth, "~> 0.7.0"},
       {:dictionary, "~> 0.1.0"},

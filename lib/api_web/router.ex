@@ -79,7 +79,7 @@ defmodule ApiWeb.Router do
   end
 
   scope "/auth", ApiWeb do
-    pipe_through [:browser_with_no_csrf, :redirect_if_user_is_authenticated]
+    pipe_through [:browser_with_no_csrf, :redirect_if_user_is_authenticated, :auth]
 
     get "/:provider", AuthController, :request
     delete "/:provider", AuthController, :delete
