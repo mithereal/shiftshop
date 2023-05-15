@@ -43,7 +43,7 @@ defmodule Api.Users do
   end
 
   def get_user_by_uid(uid, :github) do
-    Repo.get_by(User, shift4shop_uid: uid)
+    Repo.get_by(User, github_uid: uid)
   end
 
   @doc """
