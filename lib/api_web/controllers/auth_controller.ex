@@ -64,11 +64,10 @@ defmodule ApiWeb.AuthController do
   end
 
   def token(auth) do
-    IO.inspect(auth)
-    Logger.error(auth)
 
-    case auth do
-      _ -> %{github_token: auth.credentials.token}
+    case auth.provider do
+      :shift4shop -> %{shift4shop_token: auth.credentials.token}
+      :github -> %{github_token: auth.credentials.token}
     end
   end
 end

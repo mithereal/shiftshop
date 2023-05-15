@@ -38,7 +38,11 @@ defmodule Api.Users do
       nil
 
   """
-  def get_user_by_uid(uid) when is_binary(uid) do
+  def get_user_by_uid(uid) do
+    Repo.get_by(User, shift4shop_uid: uid)
+  end
+
+  def get_user_by_uid(uid, :github) do
     Repo.get_by(User, shift4shop_uid: uid)
   end
 
@@ -424,13 +428,26 @@ defmodule Api.Users do
   end
 
   def find_or_create(auth) do
-    case get_user_by_uid(auth.uid) do
-      nil ->
-        user = oauth_register_user(auth)
-        User.update_user(user, %{shift4shop_uid: auth.uid})
+    case auth.strategy do
+      :shift4shop ->
+        case get_user_by_uid(auth.uid) do
+          nil ->
+            user = oauth_register_user(auth)
+            User.update_user(user, %{swift4shop_uid: auth.uid})
 
-      reply ->
-        reply
+          reply ->
+            reply
+        end
+
+      :github ->
+        case get_user_by_uid(auth.uid, :github) do
+          nil ->
+            user = oauth_register_user(auth)
+            User.update_user(user, %{github_uid: auth.uid})
+
+          reply ->
+            reply
+        end
     end
   end
 end
