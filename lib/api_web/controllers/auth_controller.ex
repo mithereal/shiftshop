@@ -47,17 +47,28 @@ defmodule ApiWeb.AuthController do
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     ## add user email etc end
+    token = token(auth)
+
     case Api.Users.find_or_create(auth) do
       {:ok, user} ->
         conn =
           conn
           |> put_flash(:info, "Successfully authenticated.")
-          |> UserAuth.log_in_user(user, %{swift4shop_token: auth.credentials.token})
+          |> UserAuth.log_in_user(user, token)
 
       {:error, reason} ->
         conn
         |> put_flash(:error, reason)
         |> redirect(to: "/users/log_in")
+    end
+  end
+
+  def token(auth) do
+    IO.inspect(auth)
+    Logger.error(auth)
+
+    case auth do
+      _ -> %{github_token: auth.credentials.token}
     end
   end
 end

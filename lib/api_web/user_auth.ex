@@ -37,6 +37,7 @@ defmodule ApiWeb.UserAuth do
     |> put_token_in_session(token)
     |> put_session(:current_user, current_user)
     |> maybe_write_remember_me_cookie(token, params)
+    |> maybe_add_github_token(current_user, params)
     |> maybe_add_shift4shop_token(current_user, params)
     |> redirect(to: user_return_to || signed_in_path(conn))
   end
@@ -252,6 +253,16 @@ defmodule ApiWeb.UserAuth do
   end
 
   defp maybe_add_shift4shop_token(conn, _user, _params) do
+    conn
+  end
+
+  defp maybe_add_github_token(conn, user, %{github_token: token}) do
+    user = %{user | github_token: token}
+
+    Plug.Conn.put_session(conn, :current_user, user)
+  end
+
+  defp maybe_add_github_token(conn, _user, _params) do
     conn
   end
 
