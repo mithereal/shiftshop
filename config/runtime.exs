@@ -1,5 +1,17 @@
 import Config
 
+
+github_client_id =
+  System.get_env("GITHUB_CLIENT_ID") ||
+    raise """
+    environment variable GITHUB_CLIENT_ID is missing.
+    """
+
+github_client_secret =
+  System.get_env("GITHUB_CLIENT_SECRET") ||
+    raise """
+    environment variable GITHUB_CLIENT_SECRET is missing.
+    """
 # config/runtime.exs is executed for all environments, including
 # during releases. It is executed after compilation and before the
 # system starts, so it is typically used to load production configuration
@@ -91,6 +103,12 @@ if config_env() == :prod do
            ignores_csrf_attack: true,
            client_id: System.get_env("SHIFT4SHOP_CLIENT_ID"),
            client_secret: System.get_env("SHIFT4SHOP_CLIENT_SECRET")
+
+
+    config :ueberauth, Ueberauth.Strategy.Github.OAuth,
+           ignores_csrf_attack: true,
+           client_id: github_client_id,
+           client_secret: github_client_secret
   end
 
   # ## SSL Support
