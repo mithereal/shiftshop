@@ -9,6 +9,7 @@ defmodule Api.Users.User do
     field :password, :string, virtual: true, redact: true
     field :hashed_password, :string, redact: true
     field :confirmed_at, :naive_datetime
+    field(:shift4shop_uid, :integer)
     field(:github_uid, :integer)
     field :shift4shop_token, :string, virtual: true
     field :github_token, :string, virtual: true
