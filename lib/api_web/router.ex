@@ -40,6 +40,7 @@ defmodule ApiWeb.Router do
     plug(:put_root_layout, {ApiWeb.Layouts, :root})
     plug(:fetch_current_user)
     plug :protect_from_forgery
+    plug :put_secure_browser_headers
   end
 
   pipeline :browser_with_no_csrf do
