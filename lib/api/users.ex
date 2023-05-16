@@ -406,14 +406,28 @@ defmodule Api.Users do
   def find_or_create(%Ueberauth.Auth{} = auth) do
     password = Dictionary.random_word() <> "_" <> Dictionary.random_word()
 
-    user_to_register = %{
-      email: "",
-      terms: "on",
-      confirmed_at: DateTime.utc_now(),
-      password: password,
-      password_confirmation: password,
-      shift4shop_uid: auth.uid
-    }
+    user_to_register = case auth.strategy do
+      :shift4shop ->
+        %{
+          email: "",
+          terms: "on",
+          confirmed_at: DateTime.utc_now(),
+          password: password,
+          password_confirmation: password,
+          shift4shop_uid: auth.uid
+        }
+      :github ->
+        %{
+          email: "",
+          terms: "on",
+          confirmed_at: DateTime.utc_now(),
+          password: password,
+          password_confirmation: password,
+          github_uid: auth.uid
+        }
+    end
+
+
 
     case get_user_by_uid(auth.uid) do
       nil ->

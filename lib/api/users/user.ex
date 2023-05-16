@@ -49,7 +49,7 @@ defmodule Api.Users.User do
 
   def oauth_registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:email, :password, :shift4shop_uid])
+    |> cast(attrs, [:email, :password, :shift4shop_uid, :githhub_uid])
   end
 
   defp validate_email(changeset, opts) do
