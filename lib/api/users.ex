@@ -131,6 +131,10 @@ defmodule Api.Users do
     User.registration_changeset(user, attrs, hash_password: false, validate_email: false)
   end
 
+  def get_user_by_shift4shop_uid(params) do
+    Repo.get_by(%User{}, shift4shop_uid: params.shift4shop_uid)
+  end
+
   ## Settings
 
   @doc """
