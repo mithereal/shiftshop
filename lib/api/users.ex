@@ -406,7 +406,7 @@ defmodule Api.Users do
   def find_or_create(%Ueberauth.Auth{} = auth) do
     password = Dictionary.random_word() <> "_" <> Dictionary.random_word()
 
-    user_to_register = case auth.strategy do
+    user_to_register = case auth.provider do
       :shift4shop ->
         %{
           email: "",
@@ -442,7 +442,7 @@ defmodule Api.Users do
   end
 
   def find_or_create(auth) do
-    case auth.strategy do
+    case auth.provider do
       :shift4shop ->
         case get_user_by_uid(auth.uid) do
           nil ->
