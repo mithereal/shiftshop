@@ -42,3 +42,4 @@ npm-debug.log
 /rel/overlays/bin/migrate.bat
 /rel/overlays/bin/server
 /rel/overlays/bin/server.bat
+!/fly.toml
