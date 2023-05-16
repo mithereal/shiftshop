@@ -2,16 +2,10 @@ import Config
 
 
 github_client_id =
-  System.get_env("GITHUB_CLIENT_ID") ||
-    raise """
-    environment variable GITHUB_CLIENT_ID is missing.
-    """
+  System.get_env("GITHUB_CLIENT_ID") || ""
 
 github_client_secret =
-  System.get_env("GITHUB_CLIENT_SECRET") ||
-    raise """
-    environment variable GITHUB_CLIENT_SECRET is missing.
-    """
+  System.get_env("GITHUB_CLIENT_SECRET") || ""
 # config/runtime.exs is executed for all environments, including
 # during releases. It is executed after compilation and before the
 # system starts, so it is typically used to load production configuration
@@ -85,16 +79,10 @@ if config_env() == :prod do
 
   if config_env() == :prod do
     shift4shop_client_id =
-      System.get_env("SHIFT4SHOP_CLIENT_ID") ||
-        raise """
-        environment variable SHIFT4SHOP_CLIENT_ID is missing.
-        """
+      System.get_env("SHIFT4SHOP_CLIENT_ID") || ""
 
     shift4shop_client_secret =
-      System.get_env("SHIFT4SHOP_CLIENT_SECRET") ||
-        raise """
-        environment variable SHIFT4SHOP_CLIENT_SECRET is missing.
-        """
+      System.get_env("SHIFT4SHOP_CLIENT_SECRET") || ""
 
     config :oauth2_shift4shop,
            json_library: Jason

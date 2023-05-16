@@ -1,0 +1,54 @@
+# fly.toml app configuration file generated for shift4shop on 2023-05-15T23:12:56-07:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "shift4shop"
+kill_signal = "SIGTERM"
+kill_timeout = 5
+primary_region = "lax"
+processes = []
+
+[build]
+
+[deploy]
+  release_command = "/app/bin/migrate"
+
+[env]
+  PHX_HOST = "shift4shop.fly.dev"
+  PORT = "8080"
+  GITHUB_CLIENT_SECRET = ""
+  GITHUB_CLIENT_ID = ""
+  STRIPE_API_KEY = ""
+  SHIFT4SHOP_CLIENT_SECRET = ""
+  SHIFT4SHOP_CLIENT_ID = ""
+  GITHUB_DEPLOYMENT_KEY = ""
+
+[experimental]
+  auto_rollback = true
+
+[[services]]
+  http_checks = []
+  internal_port = 8080
+  processes = ["app"]
+  protocol = "tcp"
+  script_checks = []
+  [services.concurrency]
+    hard_limit = 1000
+    soft_limit = 1000
+    type = "connections"
+
+  [[services.ports]]
+    force_https = true
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
+
+  [[services.tcp_checks]]
+    grace_period = "1s"
+    interval = "15s"
+    restart_limit = 0
+    timeout = "2s"
