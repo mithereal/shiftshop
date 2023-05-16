@@ -113,8 +113,10 @@ defmodule Api.Users do
 
   """
   def oauth_register_user(attrs) do
+    IO.inspect(attrs)
     %User{}
     |> User.oauth_registration_changeset(attrs)
+    |> IO.inspect()
     |> Repo.insert()
   end
 
@@ -427,7 +429,7 @@ defmodule Api.Users do
         }
     end
 
-
+    IO.inspect(user_to_register)
 
     case get_user_by_uid(auth.uid) do
       nil ->
