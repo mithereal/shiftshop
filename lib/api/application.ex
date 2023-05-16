@@ -17,9 +17,9 @@ defmodule Api.Application do
       # Start Finch
       {Finch, name: Api.Finch},
       # Start the Endpoint (http/https)
-      ApiWeb.Endpoint
+      ApiWeb.Endpoint,
       # Start a worker by calling: Api.Worker.start_link(arg)
-      # {Api.Worker, arg}
+      {Api.Shift4ShopToken, []}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

@@ -43,6 +43,7 @@ defmodule Api.Users.User do
   def registration_changeset(user, attrs, opts \\ []) do
     user
     |> cast(attrs, [:email, :password, :shift4shop_uid])
+    |> validate_required([:shift4shop_uid])
     |> validate_email(opts)
     |> validate_password(opts)
   end
@@ -171,12 +172,9 @@ defmodule Api.Users.User do
     Repo.get_by(Api.Accounts.User, id: hash)
   end
 
-  def update_user(data) do
-    Repo.update(Api.Users.User, data)
-  end
-
   def update_user(user, data) do
-    Repo.get_by(Api.Users.User, id: user.id)
-    |> Repo.update(data)
+    user
+    |> oauth_registration_changeset(data)
+    |> Repo.update()
   end
 end

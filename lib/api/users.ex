@@ -445,7 +445,7 @@ defmodule Api.Users do
       :shift4shop ->
         case get_user_by_uid(auth.uid, :shift4shop) do
           nil ->
-            user = oauth_register_user(auth)
+            {_,user} = oauth_register_user(auth)
             User.update_user(user, %{swift4shop_uid: auth.uid})
 
           reply ->

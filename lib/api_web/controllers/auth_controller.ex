@@ -38,7 +38,9 @@ defmodule ApiWeb.AuthController do
   end
 
   def callback( conn, %{"Action" => "AUTHORIZE","PublicKey" => public_key,"SecureURL" => secure_url, "TimeStamp" => time_stamp,"TokenKey" => token_key} = params) do
-    auth = %{provider: :swift4shop, uid: secure_url}
+    auth = %{provider: :shift4shop, uid: secure_url, credentials: %{token: params}}
+    token = token(auth)
+    Api.Shift4ShopToken.add(token)
     case Api.Users.find_or_create(auth) do
       {:ok, user} ->
         conn =
