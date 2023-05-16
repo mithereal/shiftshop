@@ -24,7 +24,8 @@ config :api, ApiWeb.Endpoint,
     layout: false
   ],
   pubsub_server: Api.PubSub,
-  live_view: [signing_salt: "qi++yZ5m"]
+  live_view: [signing_salt: "qi++yZ5m"],
+  server: true
 
 # Configures the mailer
 #
@@ -61,6 +62,7 @@ config :tailwind,
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
+
 
 config :ueberauth, Ueberauth,
   providers: [
