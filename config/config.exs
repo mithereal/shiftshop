@@ -24,8 +24,7 @@ config :api, ApiWeb.Endpoint,
     layout: false
   ],
   pubsub_server: Api.PubSub,
-  live_view: [signing_salt: "qi++yZ5m"],
-  server: true
+  live_view: [signing_salt: "qi++yZ5m"]
 
 # Configures the mailer
 #
