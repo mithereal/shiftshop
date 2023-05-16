@@ -38,7 +38,7 @@ defmodule Api.Users do
       nil
 
   """
-  def get_user_by_uid(uid) do
+  def get_user_by_uid(uid, :shift4shop) do
     Repo.get_by(User, shift4shop_uid: uid)
   end
 
@@ -113,10 +113,8 @@ defmodule Api.Users do
 
   """
   def oauth_register_user(attrs) do
-    IO.inspect(attrs)
     %User{}
     |> User.oauth_registration_changeset(attrs)
-    |> IO.inspect()
     |> Repo.insert()
   end
 
@@ -429,9 +427,8 @@ defmodule Api.Users do
         }
     end
 
-    IO.inspect(user_to_register)
 
-    case get_user_by_uid(auth.uid) do
+    case get_user_by_uid(auth.uid, auth.provider) do
       nil ->
         oauth_register_user(user_to_register)
 
@@ -446,7 +443,7 @@ defmodule Api.Users do
   def find_or_create(auth) do
     case auth.provider do
       :shift4shop ->
-        case get_user_by_uid(auth.uid) do
+        case get_user_by_uid(auth.uid, :shift4shop) do
           nil ->
             user = oauth_register_user(auth)
             User.update_user(user, %{swift4shop_uid: auth.uid})

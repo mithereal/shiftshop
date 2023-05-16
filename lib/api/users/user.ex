@@ -175,8 +175,8 @@ defmodule Api.Users.User do
     Repo.update(Api.Users.User, data)
   end
 
-  def update_user(hash, data) do
-    Repo.get_by(Api.Users.User, id: hash)
+  def update_user(user, data) do
+    Repo.get_by(Api.Users.User, id: user.id)
     |> Repo.update(data)
   end
 end
