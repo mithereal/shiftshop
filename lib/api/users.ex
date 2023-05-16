@@ -97,7 +97,7 @@ defmodule Api.Users do
   def register_user(attrs) do
     %User{}
     |> User.registration_changeset(attrs)
-    |> Repo.insert()
+    |> Repo.update()
   end
 
   @doc """

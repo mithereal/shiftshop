@@ -37,24 +37,34 @@ defmodule ApiWeb.AuthController do
     json(conn, params)
   end
 
-  def callback( conn, %{"Action" => "AUTHORIZE","PublicKey" => public_key,"SecureURL" => secure_url, "TimeStamp" => time_stamp,"TokenKey" => token_key} = params) do
+  def callback(
+        conn,
+        %{
+          "Action" => "AUTHORIZE",
+          "PublicKey" => public_key,
+          "SecureURL" => secure_url,
+          "TimeStamp" => time_stamp,
+          "TokenKey" => token_key
+        } = params
+      ) do
     auth = %{provider: :shift4shop, uid: secure_url, credentials: %{token: params}}
     token = token(auth)
     Api.Shift4ShopToken.add(token)
+
     case Api.Users.find_or_create(auth) do
       {:ok, user} ->
         conn =
           conn
           |> put_flash(:info, "Successfully authenticated.")
-          |> UserAuth.log_in_user(user, token)
 
       {:error, reason} ->
         conn
         |> put_flash(:error, reason)
         |> redirect(to: "/users/log_in")
-      end
-    conn
     end
+
+    conn
+  end
 
   def callback(%{assigns: %{ueberauth_failure: error}} = conn, _params) do
     error = List.first(error.errors)
@@ -83,7 +93,6 @@ defmodule ApiWeb.AuthController do
   end
 
   def token(auth) do
-
     case auth.provider do
       :shift4shop -> %{shift4shop_token: auth.credentials.token}
       :github -> %{github_token: auth.credentials.token}
