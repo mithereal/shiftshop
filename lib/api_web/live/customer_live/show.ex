@@ -1,7 +1,7 @@
 defmodule ApiWeb.CustomerLive.Show do
   use ApiWeb, :live_view
 
-  alias Api.Swiftshop
+  alias Api.Customers
 
   @impl true
   def mount(_params, _session, socket) do
@@ -13,7 +13,7 @@ defmodule ApiWeb.CustomerLive.Show do
     {:noreply,
      socket
      |> assign(:page_title, page_title(socket.assigns.live_action))
-     |> assign(:customer, Swiftshop.get_customer!(id))}
+     |> assign(:customer, Customers.get_customer!(id))}
   end
 
   defp page_title(:show), do: "Show Customer"

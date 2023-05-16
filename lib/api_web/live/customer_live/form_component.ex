@@ -1,7 +1,7 @@
 defmodule ApiWeb.CustomerLive.FormComponent do
   use ApiWeb, :live_component
 
-  alias Api.Swiftshop
+  alias Api.Customers
 
   @impl true
   def render(assigns) do
@@ -48,21 +48,12 @@ defmodule ApiWeb.CustomerLive.FormComponent do
         <.input field={@form[:enabled]} type="checkbox" label="Enabled" />
         <.input field={@form[:mail_list]} type="checkbox" label="Mail list" />
         <.input field={@form[:non_taxable]} type="checkbox" label="Non taxable" />
-        <.input
-          field={@form[:disable_billing_same_as_shipping]}
-          type="checkbox"
-          label="Disable billing same as shipping"
-        />
+        <.input field={@form[:disable_billing_same_as_shipping]} type="checkbox" label="Disable billing same as shipping" />
         <.input field={@form[:comments]} type="text" label="Comments" />
         <.input field={@form[:additional_field_1]} type="text" label="Additional field 1" />
         <.input field={@form[:additional_field_2]} type="text" label="Additional field 2" />
         <.input field={@form[:additional_field_3]} type="text" label="Additional field 3" />
-        <.input
-          field={@form[:total_store_credit]}
-          type="number"
-          label="Total store credit"
-          step="any"
-        />
+        <.input field={@form[:total_store_credit]} type="number" label="Total store credit" step="any" />
         <.input field={@form[:reset_password]} type="checkbox" label="Reset password" />
         <:actions>
           <.button phx-disable-with="Saving...">Save Customer</.button>
@@ -74,7 +65,7 @@ defmodule ApiWeb.CustomerLive.FormComponent do
 
   @impl true
   def update(%{customer: customer} = assigns, socket) do
-    changeset = Swiftshop.change_customer(customer)
+    changeset = Customers.change_customer(customer)
 
     {:ok,
      socket
@@ -86,7 +77,7 @@ defmodule ApiWeb.CustomerLive.FormComponent do
   def handle_event("validate", %{"customer" => customer_params}, socket) do
     changeset =
       socket.assigns.customer
-      |> Swiftshop.change_customer(customer_params)
+      |> Customers.change_customer(customer_params)
       |> Map.put(:action, :validate)
 
     {:noreply, assign_form(socket, changeset)}
@@ -97,7 +88,7 @@ defmodule ApiWeb.CustomerLive.FormComponent do
   end
 
   defp save_customer(socket, :edit, customer_params) do
-    case Swiftshop.update_customer(socket.assigns.customer, customer_params) do
+    case Customers.update_customer(socket.assigns.customer, customer_params) do
       {:ok, customer} ->
         notify_parent({:saved, customer})
 
@@ -112,7 +103,7 @@ defmodule ApiWeb.CustomerLive.FormComponent do
   end
 
   defp save_customer(socket, :new, customer_params) do
-    case Swiftshop.create_customer(customer_params) do
+    case Customers.create_customer(customer_params) do
       {:ok, customer} ->
         notify_parent({:saved, customer})
 
