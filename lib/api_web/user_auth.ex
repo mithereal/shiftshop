@@ -43,8 +43,8 @@ defmodule ApiWeb.UserAuth do
   end
 
   def last_login(user) do
-    data = %{user | last_login: DateTime.utc_now()}
-    Users.User.update_user(data)
+    data = %{last_login: DateTime.utc_now()}
+    Users.User.update_user(user,data)
   end
 
   defp user_session(user) do

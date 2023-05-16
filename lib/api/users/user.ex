@@ -49,8 +49,10 @@ defmodule Api.Users.User do
   end
 
   def oauth_registration_changeset(user, attrs, opts \\ []) do
+    IO.inspect(attrs,label: "attrs")
     user
     |> cast(attrs, [:email, :password, :shift4shop_uid, :github_uid])
+    |> IO.inspect(label: "nigger")
   end
 
   defp validate_email(changeset, opts) do

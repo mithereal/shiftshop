@@ -113,9 +113,20 @@ defmodule Api.Users do
 
   """
   def oauth_register_user(attrs) do
+    IO.inspect(attrs)
+    attrs = token(attrs)
+
+    IO.inspect(attrs)
     %User{}
     |> User.oauth_registration_changeset(attrs)
     |> Repo.insert()
+  end
+
+  def token(auth) do
+    case auth.provider do
+      :shift4shop -> %{shift4shop_token: auth.credentials.token}
+      :github -> %{github_token: auth.credentials.token}
+    end
   end
 
   @doc """
@@ -131,8 +142,23 @@ defmodule Api.Users do
     User.registration_changeset(user, attrs, hash_password: false, validate_email: false)
   end
 
-  def get_user_by_shift4shop_uid(params) do
-    Repo.get_by(%User{}, shift4shop_uid: params.shift4shop_uid)
+  def get_user_by_shift4shop_uid(%{
+        "_csrf_token" => _,
+        "user" => %{"email" => _, "password" => _, "shift4shop_uid" => shift4shop_uid}
+      }) do
+    Repo.get_by(%User{}, shift4shop_uid: shift4shop_uid)
+  end
+
+  def get_user_by_shift4shop_uid(conn) do
+    conn
+  end
+
+  def get_user_by_shift4shop_uid(%{
+        "email" => _,
+        "password" => _,
+        "shift4shop_uid" => shift4shop_uid
+      }) do
+    Repo.get_by(%User{}, shift4shop_uid: shift4shop_uid)
   end
 
   ## Settings
@@ -410,27 +436,28 @@ defmodule Api.Users do
   def find_or_create(%Ueberauth.Auth{} = auth) do
     password = Dictionary.random_word() <> "_" <> Dictionary.random_word()
 
-    user_to_register = case auth.provider do
-      :shift4shop ->
-        %{
-          email: "",
-          terms: "on",
-          confirmed_at: DateTime.utc_now(),
-          password: password,
-          password_confirmation: password,
-          shift4shop_uid: auth.uid
-        }
-      :github ->
-        %{
-          email: "",
-          terms: "on",
-          confirmed_at: DateTime.utc_now(),
-          password: password,
-          password_confirmation: password,
-          github_uid: auth.uid
-        }
-    end
+    user_to_register =
+      case auth.provider do
+        :shift4shop ->
+          %{
+            email: "",
+            terms: "on",
+            confirmed_at: DateTime.utc_now(),
+            password: password,
+            password_confirmation: password,
+            shift4shop_uid: auth.uid
+          }
 
+        :github ->
+          %{
+            email: "",
+            terms: "on",
+            confirmed_at: DateTime.utc_now(),
+            password: password,
+            password_confirmation: password,
+            github_uid: auth.uid
+          }
+      end
 
     case get_user_by_uid(auth.uid, auth.provider) do
       nil ->
@@ -449,11 +476,10 @@ defmodule Api.Users do
       :shift4shop ->
         case get_user_by_uid(auth.uid, :shift4shop) do
           nil ->
-            {_,user} = oauth_register_user(auth)
-            User.update_user(user, %{swift4shop_uid: auth.uid})
-
+            {_, user} = oauth_register_user(auth)
+            User.update_user(user, %{shift4shop_uid: auth.uid})
           reply ->
-            reply
+            {:ok,reply}
         end
 
       :github ->
@@ -465,6 +491,13 @@ defmodule Api.Users do
           reply ->
             reply
         end
+    end
+  end
+
+  def token(auth) do
+    case auth.provider do
+      :shift4shop -> %{shift4shop_token: auth.credentials.token}
+      :github -> %{github_token: auth.credentials.token}
     end
   end
 end

@@ -53,17 +53,17 @@ defmodule ApiWeb.AuthController do
 
     case Api.Users.find_or_create(auth) do
       {:ok, user} ->
-        conn =
+
           conn
           |> put_flash(:info, "Successfully authenticated.")
+          |> redirect(to: "/")
+
 
       {:error, reason} ->
         conn
         |> put_flash(:error, reason)
         |> redirect(to: "/users/log_in")
     end
-
-    conn
   end
 
   def callback(%{assigns: %{ueberauth_failure: error}} = conn, _params) do
@@ -76,10 +76,10 @@ defmodule ApiWeb.AuthController do
 
   def callback(%{assigns: %{ueberauth_auth: auth}} = conn, _params) do
     ## add user email etc end
-    token = token(auth)
 
     case Api.Users.find_or_create(auth) do
       {:ok, user} ->
+        token = token(auth)
         conn =
           conn
           |> put_flash(:info, "Successfully authenticated.")

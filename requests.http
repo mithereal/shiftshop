@@ -16,7 +16,7 @@ Content-Type: application/json
 }
 
 ### @token
-POST http://{{host}}/auth/shift4shop/callback/token
+POST http://{{host}}/auth/shift4shop/callback
 Content-Type: application/json
 
 {

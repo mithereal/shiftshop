@@ -1,5 +1,512 @@
 POST http://localhost:4000/auth/shift4shop/callback
 Content-Type: application/json
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAACbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVqbQAAAA1waG9lbml4X2ZsYXNodAAAAAFtAAAABGluZm9tAAAAG1N1Y2Nlc3NmdWxseSBhdXRoZW50aWNhdGVkLg.vG4IHZJyUsDjZ9bzJx6Z3ifs9Jo8nHFhOxQyCbIbI5w; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T154124.200.html
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T153817.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T153742.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T153702.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T153606.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T153425.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T153257.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T153121.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T151412.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T151317.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T151145.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T151023.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T150941.500.html
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T150849.500.html
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T150704.500.html
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T145622.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T145537.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T145326.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T145227.500.markdown
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback/token
+Content-Type: application/json
+Content-Length: 219
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
+Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "PublicKey":"12121212121212121212121212121212",
+  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
+  "TokenKey":"34343434343434343434343434343434",
+  "Action":"AUTHORIZE",
+  "SecureURL":"https://merchant-store.3dcartstores.com"
+}
+
+<> 2023-05-16T144813.200.json
+
+###
+
+POST http://localhost:4000/auth/shift4shop/callback
+Content-Type: application/json
 Content-Length: 47
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
@@ -471,433 +978,6 @@ Accept-Encoding: br,deflate,gzip,x-gzip
 }
 
 <> 2023-05-14T050511.500.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback/token
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-<> 2023-05-14T050444.500.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback/token
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-<> 2023-05-14T050350.500.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback/token
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-<> 2023-05-14T045926.500.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback/token
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-<> 2023-05-14T045924.500.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback/token
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback/token
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback/token
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback/token
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback/token
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback/token
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-<> 2023-05-14T045458.500.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback
-Content-Type: application/json
-Content-Length: 47
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "code":"12121212121212121212121212121212"
-}
-
-<> 2023-05-13T224845.400.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback
-Content-Type: application/json
-Content-Length: 47
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "code":"12121212121212121212121212121212"
-}
-
-<> 2023-05-13T224844.400.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback
-Content-Type: application/json
-Content-Length: 47
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "code":"12121212121212121212121212121212"
-}
-
-<> 2023-05-13T224843.400.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback
-Content-Type: application/json
-Content-Length: 47
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "code":"12121212121212121212121212121212"
-}
-
-<> 2023-05-13T224842.400.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback
-Content-Type: application/json
-Content-Length: 47
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "code":"12121212121212121212121212121212"
-}
-
-<> 2023-05-13T224837.400.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback
-Content-Type: application/json
-Content-Length: 47
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "code":"12121212121212121212121212121212"
-}
-
-<> 2023-05-13T224830.400.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback
-Content-Type: application/json
-Content-Length: 47
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "code":"12121212121212121212121212121212"
-}
-
-<> 2023-05-13T224828.400.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback
-Content-Type: application/json
-Content-Length: 47
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "code":"12121212121212121212121212121212"
-}
-
-<> 2023-05-13T224613.400.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback
-Content-Length: 78
-Content-Type: */*; charset=UTF-8
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=pZpWlegw2rqnbnB6kSSBjsPp
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-Content-Type: application/json
-{
-  "code":"12121212121212121212121212121212"
-}
-
-<> 2023-05-13T224446.400.markdown
-
-###
-
-# @no-redirect
-GET http://localhost:4000/auth/shift4shop/
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=OtpoKOETqtA_w2WZQJArpSIN
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-05-13T224319.302.txt
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=OtpoKOETqtA_w2WZQJArpSIN
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-<> 2023-05-13T223655.400.markdown
-
-###
-
-POST http://localhost:4000/auth/shift4shop/callback
-Content-Type: application/json
-Content-Length: 219
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=OtpoKOETqtA_w2WZQJArpSIN
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-{
-  "PublicKey":"12121212121212121212121212121212",
-  "TimeStamp":"MM-DD-YYYY HH:MM:SS",
-  "TokenKey":"34343434343434343434343434343434",
-  "Action":"AUTHORIZE",
-  "SecureURL":"https://merchant-store.3dcartstores.com"
-}
-
-<> 2023-05-13T223345.400.markdown
-
-###
-
-GET http://localhost:4000/auth/shift4shop/callback
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAACbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVqbQAAAA1waG9lbml4X2ZsYXNodAAAAAFtAAAABWVycm9ybQAAADlGYWlsZWQgdG8gYXV0aGVudGljYXRlLiBDcm9zcy1TaXRlIFJlcXVlc3QgRm9yZ2VyeSBhdHRhY2s.I_pWCC4U-Ri-w-uA0U946MVMtjcr7W8-jtF4vfAwFQ8; ueberauth.state_param=OtpoKOETqtA_w2WZQJArpSIN
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-05-13T223341.200.html
-
-###
-
-# @no-redirect
-GET http://localhost:4000/auth/shift4shop/
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=h6kJ584QKyTFKXOlLV9jZs0m
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-05-13T223304.302.txt
-
-###
-
-# @no-redirect
-GET http://localhost:4000/auth/shift4shop/
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Cookie: _api_key=SFMyNTY.g3QAAAABbQAAAAtfY3NyZl90b2tlbm0AAAAYTEJwaUctOUpDb2dUYkd0NkI0S0FiRzVq.Q9qwN6cZy8xQ41s1Wf_u6e_lzTxYt0k37c63wtS4V9A; ueberauth.state_param=d3cKlrSNpV1YM8SpkRKZ6EYW
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-05-13T220540.302.txt
-
-###
-
-GET http://localhost:4000/auth/shift4shop/
-Connection: Keep-Alive
-User-Agent: Apache-HttpClient/4.5.13 (Java/17.0.5)
-Accept-Encoding: br,deflate,gzip,x-gzip
-
-<> 2023-05-13T220525.400.html
 
 ###
 
