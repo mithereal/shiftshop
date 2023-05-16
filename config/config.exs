@@ -67,7 +67,7 @@ config :ueberauth, Ueberauth,
     shift4shop: {Ueberauth.Strategy.Shift4Shop, []},
     github:
       {Ueberauth.Strategy.Github,
-      [default_scope: "user:email, repo", allow_private_emails: true, send_redirect_uri: false]}
+      [default_scope: "user:email, repo", allow_private_emails: true, send_redirect_uri: true]}
   ]
 
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,

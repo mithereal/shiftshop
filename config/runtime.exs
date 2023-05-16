@@ -90,8 +90,8 @@ if config_env() == :prod do
 
     config :oauth2_shift4shop, :credentials,
            ignores_csrf_attack: true,
-           client_id: System.get_env("SHIFT4SHOP_CLIENT_ID"),
-           client_secret: System.get_env("SHIFT4SHOP_CLIENT_SECRET")
+           client_id: shift4shop_client_id,
+           client_secret: shift4shop_client_secret
 
 
     config :ueberauth, Ueberauth.Strategy.Github.OAuth,
