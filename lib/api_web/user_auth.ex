@@ -266,7 +266,7 @@ defmodule ApiWeb.UserAuth do
     conn
   end
 
-  defp signed_in_path(_conn), do: ~p"/"
+  defp signed_in_path(_conn), do: ~p"/home"
 
   def pubsub_topic, do: @pubsub_topic
 end

@@ -100,6 +100,12 @@ defmodule Api.Users do
     |> Repo.update()
   end
 
+  def register_user(user, attrs) do
+    user
+    |> User.registration_changeset(attrs)
+    |> Repo.update()
+  end
+
   @doc """
   Registers a user.
 

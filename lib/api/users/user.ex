@@ -42,17 +42,17 @@ defmodule Api.Users.User do
   """
   def registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:email, :password, :shift4shop_uid])
+    |> cast(attrs, [:email, :password, :shift4shop_uid, :github_uid])
     |> validate_required([:shift4shop_uid])
     |> validate_email(opts)
     |> validate_password(opts)
   end
 
   def oauth_registration_changeset(user, attrs, opts \\ []) do
-    IO.inspect(attrs,label: "attrs")
     user
     |> cast(attrs, [:email, :password, :shift4shop_uid, :github_uid])
-    |> IO.inspect(label: "nigger")
+    |> unsafe_validate_unique(:shift4shop_uid, Api.Repo)
+    |> unique_constraint(:shift4shop_uid)
   end
 
   defp validate_email(changeset, opts) do
