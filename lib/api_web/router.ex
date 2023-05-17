@@ -22,6 +22,16 @@ defmodule ApiWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :admin do
+    plug :accepts, ["html"]
+    plug :put_root_layout, {ApiWeb.Layouts, :admin}
+    plug :fetch_session
+    plug :fetch_live_flash
+    plug :fetch_current_user
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -145,6 +155,12 @@ defmodule ApiWeb.Router do
     pipe_through([:browser])
 
     get("/force_logout", UserSessionController, :force_logout)
+  end
+
+  scope "/admin", ApiWeb do
+    pipe_through([:admin])
+
+    get("/logout", UserSessionController, :force_logout)
   end
 
   # Other scopes may use custom stacks.

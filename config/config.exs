@@ -49,6 +49,12 @@ config :esbuild,
       ~w(js/user.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
     cd: Path.expand("../assets", __DIR__),
     env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
+  ],
+  admin: [
+    args:
+      ~w(js/admin.js --bundle --target=es2017 --outdir=../priv/static/assets --external:/fonts/* --external:/images/*),
+    cd: Path.expand("../assets", __DIR__),
+    env: %{"NODE_PATH" => Path.expand("../deps", __DIR__)}
   ]
 
 # Configure tailwind (the version is required)
@@ -69,6 +75,14 @@ config :tailwind,
       --output=../priv/static/assets/user.css
     ),
     cd: Path.expand("../assets", __DIR__)
+  ],
+  admin: [
+    args: ~w(
+      --config=tailwind.config.js
+      --input=css/admin.css
+      --output=../priv/static/assets/admin.css
+    ),
+    cd: Path.expand("../assets", __DIR__)
   ]
 
 # Configures Elixir's Logger
@@ -76,23 +90,21 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-
 config :ueberauth, Ueberauth,
   providers: [
     shift4shop: {Ueberauth.Strategy.Shift4Shop, []},
     github:
       {Ueberauth.Strategy.Github,
-      [default_scope: "user:email, repo", allow_private_emails: true, send_redirect_uri: true]}
+       [default_scope: "user:email, repo", allow_private_emails: true, send_redirect_uri: true]}
   ]
 
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
-       client_id: "",
-       client_secret: ""
+  client_id: "",
+  client_secret: ""
 
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
-config :oauth2_shift4shop,
-       :json_library, Jason
+config :oauth2_shift4shop, :json_library, Jason
 
 config :plug_content_security_policy,
   nonces_for: [],

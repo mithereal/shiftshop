@@ -79,8 +79,10 @@ defmodule Api.MixProject do
       "assets.deploy": [
         "tailwind default --minify",
         "tailwind user --minify",
+        "tailwind admin --minify",
         "esbuild default --minify",
         "esbuild user --minify",
+        "esbuild admin --minify",
         "phx.digest"
       ]
     ]
