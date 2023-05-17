@@ -58,7 +58,7 @@ defmodule Api.MixProject do
       {:plug_content_security_policy,
        git: "https://github.com/data-twister/plug_content_security_policy.git"},
       {:corsica, "~> 1.1"},
-      {:ueberauth_github, "~> 0.8.1"},
+      {:ueberauth_github, "~> 0.8.1"}
     ]
   end
 
@@ -75,8 +75,14 @@ defmodule Api.MixProject do
       "ecto.reset": ["ecto.drop", "ecto.setup"],
       test: ["ecto.create --quiet", "ecto.migrate --quiet", "test"],
       "assets.setup": ["tailwind.install --if-missing", "esbuild.install --if-missing"],
-      "assets.build": ["tailwind default", "esbuild default"],
-      "assets.deploy": ["tailwind default --minify", "esbuild default --minify", "phx.digest"]
+      "assets.build": ["tailwind default", "tailwind user", "esbuild default", "esbuild user"],
+      "assets.deploy": [
+        "tailwind default --minify",
+        "tailwind user --minify",
+        "esbuild default --minify",
+        "esbuild user --minify",
+        "phx.digest"
+      ]
     ]
   end
 end
