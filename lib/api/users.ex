@@ -100,7 +100,7 @@ defmodule Api.Users do
     |> Repo.update()
   end
 
-  def register_user(user, attrs) do
+  def register_user(user, attrs)do
     user
     |> User.registration_changeset(attrs)
     |> Repo.update()
@@ -152,11 +152,8 @@ defmodule Api.Users do
         "_csrf_token" => _,
         "user" => %{"email" => _, "password" => _, "shift4shop_uid" => shift4shop_uid}
       }) do
-    Repo.get_by(%User{}, shift4shop_uid: shift4shop_uid)
-  end
 
-  def get_user_by_shift4shop_uid(conn) do
-    conn
+    Repo.get_by(%User{}, shift4shop_uid: shift4shop_uid)
   end
 
   def get_user_by_shift4shop_uid(%{
@@ -164,7 +161,13 @@ defmodule Api.Users do
         "password" => _,
         "shift4shop_uid" => shift4shop_uid
       }) do
-    Repo.get_by(%User{}, shift4shop_uid: shift4shop_uid)
+    IO.inspect(shift4shop_uid, label: "shift4shop_uid")
+    Repo.get_by(User, shift4shop_uid: shift4shop_uid)
+  end
+
+  def get_user_by_shift4shop_uid(conn) do
+    IO.inspect(conn, label: "dsadsadsadsa")
+    nil
   end
 
   ## Settings

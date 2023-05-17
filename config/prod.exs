@@ -18,11 +18,12 @@ config :swoosh, api_client: Swoosh.ApiClient.Finch, finch_name: Api.Finch
 # Do not print debug messages in production
 config :logger, level: :all
 
+port = String.to_integer(System.get_env("PORT") || "4000")
 
-hostname = System.get_env("PHOENIX_HOSTNAME") || "localhost"
+hostname = System.get_env("PHX_HOST") || "localhost"
 
 config :api, ApiWeb.Endpoint,
-  url: [host: hostname, port: 80],
+  url: [host: hostname, port: port],
   check_origin: false,
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/cache_manifest.json",
@@ -32,7 +33,8 @@ config :api, ApiWeb.Endpoint,
     rewrite_on: [:x_forwarded_port, :x_forwarded_proto],
     # maybe true when we use this for real
     hsts: false
-  ]
+  ],
+server: true
 
 config :oauth2_shift4shop,
        json_library: Jason

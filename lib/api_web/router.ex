@@ -60,7 +60,7 @@ defmodule ApiWeb.Router do
     pipe_through :user
 
     live_session :require_authenticated_user,
-      layout: {ApiWeb.Layouts, :user},
+      layout: {ApiWeb.Layouts, :home},
       on_mount: [
         {ApiWeb.UserAuth, :ensure_authenticated},
         {ApiWeb.Path, :put_path_in_socket}

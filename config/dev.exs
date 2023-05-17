@@ -27,8 +27,11 @@ config :api, ApiWeb.Endpoint,
   secret_key_base: "7vs7tbkAKRGYZFUKqofJ2pOCdiGOWuBJkT+TvWAfdGQ+Mea3+Gc3IZWaPFsPOCrV",
   watchers: [
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
-  ]
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
+    esbuild: {Esbuild, :install_and_run, [:user, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:user, ~w(--watch)]}
+  ],
+  server: true
 
 # ## SSL Support
 #
@@ -80,13 +83,13 @@ config :phoenix, :plug_init_mode, :runtime
 config :swoosh, :api_client, false
 
 config :oauth2_shift4shop,
-       json_library: Jason
+  json_library: Jason
 
 config :oauth2_shift4shop, :credentials,
-       client_id: System.get_env("SHIFT4SHOP_CLIENT_ID"),
-       client_secret: System.get_env("SHIFT4SHOP_CLIENT_SECRET"),
-       redirect_uri: "https://devportal.3dcart.com/oauth.asp"
+  client_id: System.get_env("SHIFT4SHOP_CLIENT_ID"),
+  client_secret: System.get_env("SHIFT4SHOP_CLIENT_SECRET"),
+  redirect_uri: "https://devportal.3dcart.com/oauth.asp"
 
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
-       client_id: System.get_env("GITHUB_CLIENT_ID"),
-       client_secret:  System.get_env("GITHUB_CLIENT_SECRET")
+  client_id: System.get_env("GITHUB_CLIENT_ID"),
+  client_secret: System.get_env("GITHUB_CLIENT_SECRET")

@@ -36,8 +36,6 @@ if config_env() == :prod do
 
   maybe_ipv6 = if System.get_env("ECTO_IPV6") in ~w(true 1), do: [:inet6], else: []
 
-  config :api, ApiWeb.Endpoint, server: true
-
   config :api, Api.Repo,
     # ssl: true,
     url: database_url,
@@ -78,7 +76,8 @@ if config_env() == :prod do
       ip: {0, 0, 0, 0, 0, 0, 0, 0},
       port: port
     ],
-    secret_key_base: secret_key_base
+    secret_key_base: secret_key_base,
+    server: true
 
   if config_env() == :prod do
     shift4shop_client_id =

@@ -2,7 +2,7 @@ defmodule Api.Repo.Migrations.CreateCustomer do
   use Ecto.Migration
 
   def change do
-    create table(:customer) do
+    create table(:customers) do
       add :customer_id, :integer
       add :email, :string
       add :password, :string

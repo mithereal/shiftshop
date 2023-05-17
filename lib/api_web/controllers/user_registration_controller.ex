@@ -11,10 +11,12 @@ defmodule ApiWeb.UserRegistrationController do
   end
 
   def create(conn, %{"user" => user_params}) do
+    IO.inspect(user_params, label: "user_params")
     user = Users.get_user_by_shift4shop_uid(user_params)
 
     case Users.register_user(user, user_params) do
       {:ok, user} ->
+        IO.inspect(user, label: "user")
         {:ok, _} =
           Users.deliver_user_confirmation_instructions(
             user,

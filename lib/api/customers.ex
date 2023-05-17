@@ -17,7 +17,7 @@ defmodule Api.Customers do
       [%Customer{}, ...]
 
   """
-  def list_customer do
+  def list_customers do
     Repo.all(Customer)
   end
 

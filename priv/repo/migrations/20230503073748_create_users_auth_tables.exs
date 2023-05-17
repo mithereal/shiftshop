@@ -5,13 +5,17 @@ defmodule Api.Repo.Migrations.CreateUsersAuthTables do
     execute "CREATE EXTENSION IF NOT EXISTS citext", ""
 
     create table(:users) do
-      add :email, :citext, null: false
-      add :hashed_password, :string, null: false
+      add :email, :citext, null: true
+      add :hashed_password, :string, null: true
       add :confirmed_at, :naive_datetime
+      add :shift4shop_uid, :string, null: true
+      add :github_uid, :integer, null: true
       timestamps()
     end
 
     create unique_index(:users, [:email])
+    create unique_index(:users, [:shift4shop_uid])
+    create unique_index(:users, [:github_uid])
 
     create table(:users_tokens) do
       add :user_id, references(:users, on_delete: :delete_all), null: false
