@@ -28,4 +28,41 @@ defmodule Api.UsersFixtures do
     [_, token | _] = String.split(captured_email.text_body, "[TOKEN]")
     token
   end
+
+  @doc """
+  Generate a user.
+  """
+  def user_fixture(attrs \\ %{}) do
+    {:ok, user} =
+      attrs
+      |> Enum.into(%{
+        email: "some email",
+        github_id: "some github_id",
+        hashed_password: "some hashed_password",
+        id: "7488a646-e31f-11e4-aace-600308960662",
+        image: "some image",
+        shift4shop_id: "some shift4shop_id"
+      })
+      |> Api.Users.create_user()
+
+    user
+  end
+
+  @doc """
+  Generate a user.
+  """
+  def user_fixture(attrs \\ %{}) do
+    {:ok, user} =
+      attrs
+      |> Enum.into(%{
+        email: "some email",
+        github_id: "some github_id",
+        hashed_password: "some hashed_password",
+        id: "7488a646-e31f-11e4-aace-600308960662",
+        shift4shop_id: "some shift4shop_id"
+      })
+      |> Api.Users.create_user()
+
+    user
+  end
 end
