@@ -119,10 +119,8 @@ defmodule Api.Users do
 
   """
   def oauth_register_user(attrs) do
-    IO.inspect(attrs)
     attrs = token(attrs)
 
-    IO.inspect(attrs)
     %User{}
     |> User.oauth_registration_changeset(attrs)
     |> Repo.insert()
@@ -161,12 +159,10 @@ defmodule Api.Users do
         "password" => _,
         "shift4shop_uid" => shift4shop_uid
       }) do
-    IO.inspect(shift4shop_uid, label: "shift4shop_uid")
     Repo.get_by(User, shift4shop_uid: shift4shop_uid)
   end
 
   def get_user_by_shift4shop_uid(conn) do
-    IO.inspect(conn, label: "dsadsadsadsa")
     nil
   end
 

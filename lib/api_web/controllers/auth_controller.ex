@@ -10,6 +10,7 @@ defmodule ApiWeb.AuthController do
   alias Ueberauth.Strategy.Helpers
   alias Api.Users.User
   alias ApiWeb.UserAuth
+  alias Api.Shift4ShopToken.Supervisor
 
   require Logger
 
@@ -49,15 +50,14 @@ defmodule ApiWeb.AuthController do
       ) do
     auth = %{provider: :shift4shop, uid: secure_url, credentials: %{token: params}}
     token = token(auth)
-    Api.Shift4ShopToken.add(token)
 
     case Api.Users.find_or_create(auth) do
       {:ok, user} ->
+        Supervisor.start(user)
 
-          conn
-          |> put_flash(:info, "Successfully authenticated.")
-          |> redirect(to: "/")
-
+        conn
+        |> put_flash(:info, "Successfully authenticated.")
+        |> redirect(to: "/home")
 
       {:error, reason} ->
         conn
@@ -80,6 +80,7 @@ defmodule ApiWeb.AuthController do
     case Api.Users.find_or_create(auth) do
       {:ok, user} ->
         token = token(auth)
+
         conn =
           conn
           |> put_flash(:info, "Successfully authenticated.")

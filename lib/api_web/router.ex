@@ -63,6 +63,7 @@ defmodule ApiWeb.Router do
   scope "/", ApiWeb do
     pipe_through :browser
 
+
     get "/", PageController, :landing
   end
 
@@ -159,6 +160,8 @@ defmodule ApiWeb.Router do
 
   scope "/admin", ApiWeb do
     pipe_through([:admin])
+
+    resources "/customers", UserController
 
     get("/logout", UserSessionController, :force_logout)
   end

@@ -5,6 +5,7 @@ defmodule Api.Customers do
 
   import Ecto.Query, warn: false
   alias Api.Repo
+  alias Shift4Shop.OAuth
 
   alias Api.Customers.Customer
 
@@ -35,7 +36,12 @@ defmodule Api.Customers do
       ** (Ecto.NoResultsError)
 
   """
-  def get_customer!(id), do: Repo.get!(Customer, id)
+  def get_customer!(id, token // "") do
+    url = id
+    repo = Repo.get!(Customer, id)
+    oauth = OAuth.get!(url, token)
+    {repo, oauth}
+  end
 
   @doc """
   Creates a customer.
@@ -101,5 +107,4 @@ defmodule Api.Customers do
   def change_customer(%Customer{} = customer, attrs \\ %{}) do
     Customer.changeset(customer, attrs)
   end
-
 end
